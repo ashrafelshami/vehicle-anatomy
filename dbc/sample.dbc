@@ -1,0 +1,24 @@
+VERSION ""
+
+BU_: Engine_ECU Transmission_ECU ABS_ECU BCM Cluster Gateway
+
+BO_ 256 EngineData: 8 Engine_ECU
+ SG_ EngineRPM : 0|16@1+ (0.25,0) [0|8000] "rpm" Transmission_ECU,Cluster,Gateway
+ SG_ ThrottlePos : 16|8@1+ (0.4,0) [0|100] "%" Transmission_ECU,ABS_ECU
+ SG_ CoolantTemp : 24|8@1+ (1,-40) [-40|215] "C" Cluster
+
+BO_ 512 GearStatus: 4 Transmission_ECU
+ SG_ CurrentGear : 0|4@1+ (1,0) [0|8] "" Engine_ECU,Cluster
+ SG_ TorqueRequest : 8|12@1+ (0.5,0) [0|2000] "Nm" Engine_ECU
+
+BO_ 768 WheelSpeeds: 8 ABS_ECU
+ SG_ WheelSpeedFL : 0|16@1+ (0.01,0) [0|300] "km/h" Engine_ECU,Gateway,Cluster
+ SG_ WheelSpeedFR : 16|16@1+ (0.01,0) [0|300] "km/h" Gateway,Cluster
+ SG_ AbsActive : 32|1@1+ (1,0) [0|1] "" BCM,Cluster
+
+BO_ 1024 BodyStatus: 4 BCM
+ SG_ DoorOpen : 0|1@1+ (1,0) [0|1] "" Cluster,Gateway
+ SG_ HeadlightOn : 1|1@1+ (1,0) [0|1] "" Cluster
+
+BO_ 1280 GatewayDiag: 8 Gateway
+ SG_ BusLoad : 0|8@1+ (1,0) [0|100] "%" Cluster

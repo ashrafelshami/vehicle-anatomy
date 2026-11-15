@@ -1,0 +1,183 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: ABS ESC EPS SUSP VCU GW_CENTRAL
+
+BO_ 263 ABS_Status1: 8 ABS
+ SG_ WheelSpeedFL_Max : 0|16@1+ (0.01,0) [0|655.35] "km/h" SUSP,VCU,GW_CENTRAL
+ SG_ VehicleSpeedEst_Raw : 16|16@1+ (0.01,0) [0|655.35] "km/h" VCU,GW_CENTRAL
+ SG_ LongAccel : 32|12@1+ (0.05,-100) [-100|104.75] "m/s2" VCU,GW_CENTRAL
+ SG_ AliveCnt : 44|4@1+ (1,0) [0|15] "" GW_CENTRAL,SUSP,VCU
+ SG_ Crc8 : 48|8@1+ (1,0) [0|255] "" GW_CENTRAL,SUSP,VCU
+
+BO_ 264 ABS_Data2: 8 ABS
+ SG_ WheelSpeedRR : 0|16@1+ (0.01,0) [0|655.35] "km/h" VCU,SUSP
+ SG_ LatAccel_Avg : 16|12@1+ (0.05,-100) [-100|104.75] "m/s2" VCU,SUSP
+ SG_ LongAccel_Raw : 28|12@1+ (0.05,-100) [-100|104.75] "m/s2" VCU,EPS,SUSP
+ SG_ AliveCnt : 40|4@1+ (1,0) [0|15] "" SUSP,ESC
+ SG_ Crc8 : 44|8@1+ (1,0) [0|255] "" SUSP,ESC
+
+BO_ 272 ABS_Cmd3: 8 ABS
+ SG_ WheelSpeedFL_Avg : 0|16@1+ (0.01,0) [0|655.35] "km/h" EPS,VCU
+ SG_ LatAccel_Max : 16|12@1+ (0.05,-100) [-100|104.75] "m/s2" ESC,VCU
+ SG_ LatAccel_Raw : 28|12@1+ (0.05,-100) [-100|104.75] "m/s2" EPS,VCU
+ SG_ AliveCnt : 40|4@1+ (1,0) [0|15] "" VCU,ESC
+ SG_ Crc8 : 44|8@1+ (1,0) [0|255] "" VCU,ESC
+
+BO_ 274 ESC_Status1: 8 ESC
+ SG_ HillHoldActive : 0|1@1+ (1,0) [0|1] "" EPS,GW_CENTRAL,SUSP,ABS
+ SG_ SlipAngle_Avg : 1|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,SUSP,ABS
+ SG_ SteeringAngle_Min : 17|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,EPS,SUSP,ABS
+ SG_ SlipAngle_Min : 33|16@1+ (0.1,-1000) [-1000|5553.5] "deg" ABS,GW_CENTRAL
+ SG_ AliveCnt : 49|4@1+ (1,0) [0|15] "" ABS,VCU
+ SG_ Crc8 : 53|8@1+ (1,0) [0|255] "" ABS,VCU
+
+BO_ 280 ESC_Data2: 8 ESC
+ SG_ YawRateRef_Min : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" EPS,SUSP
+ SG_ RollRate_Min : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" SUSP,EPS
+ SG_ YawRateRef_Avg : 32|16@1+ (0.1,-1000) [-1000|5553.5] "deg" EPS,SUSP
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" SUSP,ABS,EPS
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" SUSP,ABS,EPS
+
+BO_ 284 ESC_Cmd3: 8 ESC
+ SG_ BrakeIntervention_Min : 0|8@1+ (0.4,0) [0|102] "%" SUSP,VCU,GW_CENTRAL
+ SG_ TorqueIntervention_Avg : 8|16@1+ (0.5,-500) [-500|32267.5] "Nm" SUSP,VCU,GW_CENTRAL
+ SG_ RollRate : 24|16@1+ (0.1,-1000) [-1000|5553.5] "deg" SUSP,VCU,GW_CENTRAL
+ SG_ AliveCnt : 40|4@1+ (1,0) [0|15] "" GW_CENTRAL,ABS,SUSP,VCU
+ SG_ Crc8 : 44|8@1+ (1,0) [0|255] "" GW_CENTRAL,ABS,SUSP,VCU
+
+BO_ 290 ESC_Info4: 8 ESC
+ SG_ RollRate_Avg : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" ABS,GW_CENTRAL
+ SG_ TorqueIntervention_Raw : 16|16@1+ (0.5,-500) [-500|32267.5] "Nm" GW_CENTRAL,EPS
+ SG_ SlipAngle : 32|16@1+ (0.1,-1000) [-1000|5553.5] "deg" SUSP,GW_CENTRAL
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" GW_CENTRAL,VCU
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" GW_CENTRAL,VCU
+
+BO_ 292 EPS_Status1: 8 EPS
+ SG_ SteerAngleReq_Max : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL
+ SG_ SteerFault : 16|1@1+ (1,0) [0|1] "" ABS,GW_CENTRAL
+ SG_ SteerAngleReq_Raw : 17|16@1+ (0.1,-1000) [-1000|5553.5] "deg" SUSP,GW_CENTRAL
+ SG_ SteerAngleReq : 33|16@1+ (0.1,-1000) [-1000|5553.5] "deg" SUSP,GW_CENTRAL
+ SG_ AliveCnt : 49|4@1+ (1,0) [0|15] "" GW_CENTRAL,ABS
+ SG_ Crc8 : 53|8@1+ (1,0) [0|255] "" GW_CENTRAL,ABS
+
+BO_ 293 EPS_Data2: 8 EPS
+ SG_ MotorCurrent_Raw : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" ESC,ABS,GW_CENTRAL
+ SG_ AssistLevel_Raw : 16|8@1+ (0.4,0) [0|102] "%" SUSP,ABS,GW_CENTRAL
+ SG_ SteerAngleReq_Avg : 24|16@1+ (0.1,-1000) [-1000|5553.5] "deg" ABS,SUSP,GW_CENTRAL
+ SG_ MotorTemp_Raw : 40|8@1+ (1,-40) [-40|215] "degC" ESC,SUSP,GW_CENTRAL
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" GW_CENTRAL,ESC
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" GW_CENTRAL,ESC
+
+BO_ 301 EPS_Cmd3: 8 EPS
+ SG_ MotorCurrent_Avg : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" GW_CENTRAL,ESC,VCU
+ SG_ AssistLevel : 16|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,ABS,VCU
+ SG_ SteerTorque_Raw : 24|16@1+ (0.5,-500) [-500|32267.5] "Nm" VCU
+ SG_ AliveCnt : 40|4@1+ (1,0) [0|15] "" VCU,ESC,ABS
+ SG_ Crc8 : 44|8@1+ (1,0) [0|255] "" VCU,ESC,ABS
+
+BO_ 309 SUSP_Status1: 8 SUSP
+ SG_ AirPressure : 0|16@1+ (0.1,0) [0|6553.5] "kPa" GW_CENTRAL,ABS,EPS
+ SG_ RideHeightFR_Avg : 16|16@1+ (0.01,0) [0|655.35] "m" ESC,VCU,EPS,GW_CENTRAL
+ SG_ RideHeightRR_Raw : 32|16@1+ (0.01,0) [0|655.35] "m" VCU,GW_CENTRAL
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" GW_CENTRAL,ESC,VCU,EPS
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" GW_CENTRAL,ESC,VCU,EPS
+
+BO_ 316 SUSP_Data2: 8 SUSP
+ SG_ BodyAccelZ_Avg : 0|12@1+ (0.05,-100) [-100|104.75] "m/s2" GW_CENTRAL,VCU,EPS
+ SG_ RideHeightFR : 12|16@1+ (0.01,0) [0|655.35] "m" VCU,EPS
+ SG_ RideHeightRR : 28|16@1+ (0.01,0) [0|655.35] "m" ABS,GW_CENTRAL,VCU,EPS
+ SG_ AliveCnt : 44|4@1+ (1,0) [0|15] "" EPS,ESC
+ SG_ Crc8 : 48|8@1+ (1,0) [0|255] "" EPS,ESC
+
+BO_ 319 SUSP_Cmd3: 8 SUSP
+ SG_ RideHeightFR_Max : 0|16@1+ (0.01,0) [0|655.35] "m" VCU,ESC,EPS
+ SG_ RideHeightFR_Min : 16|16@1+ (0.01,0) [0|655.35] "m" ABS,EPS
+ SG_ SuspState : 32|4@1+ (1,0) [0|15] "" ESC,ABS,EPS
+ SG_ BodyAccelZ_Max : 36|12@1+ (0.05,-100) [-100|104.75] "m/s2" EPS,VCU,GW_CENTRAL
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" EPS,VCU
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" EPS,VCU
+
+BO_ 324 SUSP_Info4: 8 SUSP
+ SG_ RideHeightRR_Avg : 0|16@1+ (0.01,0) [0|655.35] "m" EPS,GW_CENTRAL,VCU
+ SG_ LevelRequest_Avg : 16|8@1+ (0.4,0) [0|102] "%" ESC,GW_CENTRAL,VCU
+ SG_ RideHeightRL_Avg : 24|16@1+ (0.01,0) [0|655.35] "m" ABS,ESC,VCU
+ SG_ AliveCnt : 40|4@1+ (1,0) [0|15] "" VCU
+ SG_ Crc8 : 44|8@1+ (1,0) [0|255] "" VCU
+
+BO_ 329 VCU_Status1: 8 VCU
+ SG_ BrakePedalPos : 0|8@1+ (0.4,0) [0|102] "%" SUSP,ABS
+ SG_ ThermalReq : 8|8@1+ (0.4,0) [0|102] "%" ESC,SUSP,ABS
+ SG_ BrakePedalPos_Raw : 16|8@1+ (0.4,0) [0|102] "%" SUSP,ABS
+ SG_ CruiseSet_Raw : 24|16@1+ (0.01,0) [0|655.35] "km/h" ESC,EPS,SUSP,ABS
+ SG_ AliveCnt : 40|4@1+ (1,0) [0|15] "" ABS
+ SG_ Crc8 : 44|8@1+ (1,0) [0|255] "" ABS
+
+BO_ 331 VCU_Data2: 8 VCU
+ SG_ TorqueRequest : 0|16@1+ (0.5,-500) [-500|32267.5] "Nm" GW_CENTRAL,ESC
+ SG_ BrakePedalPos_Min : 16|8@1+ (0.4,0) [0|102] "%" ESC,ABS
+ SG_ BrakePedalPos_Max : 24|8@1+ (0.4,0) [0|102] "%" ESC,ABS,SUSP
+ SG_ TorqueRequest_Avg : 32|16@1+ (0.5,-500) [-500|32267.5] "Nm" ABS,GW_CENTRAL,ESC
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" ESC,ABS,SUSP
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" ESC,ABS,SUSP
+
+BO_ 333 VCU_Cmd3: 8 VCU
+ SG_ BrakePedalPos_Avg : 0|8@1+ (0.4,0) [0|102] "%" EPS,SUSP
+ SG_ VehicleSpeed : 8|16@1+ (0.01,0) [0|655.35] "km/h" SUSP,ESC
+ SG_ PowerLimit_Raw : 24|16@1+ (0.1,0) [0|6553.5] "kWh" GW_CENTRAL,SUSP
+ SG_ AliveCnt : 40|4@1+ (1,0) [0|15] "" SUSP,ABS,EPS
+ SG_ Crc8 : 44|8@1+ (1,0) [0|255] "" SUSP,ABS,EPS
+
+BO_ 339 VCU_Info4: 8 VCU
+ SG_ VehicleSpeed_Min : 0|16@1+ (0.01,0) [0|655.35] "km/h" SUSP
+ SG_ VehicleSpeed_Raw : 16|16@1+ (0.01,0) [0|655.35] "km/h" ESC,SUSP
+ SG_ EcoMode : 32|1@1+ (1,0) [0|1] "" ESC,EPS,SUSP
+ SG_ TorqueRequest_Raw : 33|16@1+ (0.5,-500) [-500|32267.5] "Nm" ESC,ABS,SUSP
+ SG_ AliveCnt : 49|4@1+ (1,0) [0|15] "" SUSP,EPS,ESC
+ SG_ Crc8 : 53|8@1+ (1,0) [0|255] "" SUSP,EPS,ESC
+
+BO_ 345 VCU_Limits5: 8 VCU
+ SG_ VehicleSpeed_Avg : 0|16@1+ (0.01,0) [0|655.35] "km/h" EPS,SUSP,GW_CENTRAL
+ SG_ PedalPos_Max : 16|8@1+ (0.4,0) [0|102] "%" SUSP,ABS,GW_CENTRAL
+ SG_ CruiseSet_Max : 24|16@1+ (0.01,0) [0|655.35] "km/h" ESC,GW_CENTRAL
+ SG_ TorqueSplit_Avg : 40|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,ESC,EPS
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" GW_CENTRAL,EPS
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" GW_CENTRAL,EPS
+
+BO_ 348 GW_CENTRAL_Status1: 8 GW_CENTRAL
+ SG_ BusLoad_Raw : 0|8@1+ (0.4,0) [0|102] "%" EPS
+ SG_ VoltageSupply : 8|16@1+ (0.01,0) [0|655.35] "V" EPS,ABS,VCU
+ SG_ OTAActive : 24|1@1+ (1,0) [0|1] "" SUSP,EPS
+ SG_ TimeSync : 25|16@1+ (0.1,0) [0|6553.5] "s" VCU,ABS,EPS
+ SG_ AliveCnt : 41|4@1+ (1,0) [0|15] "" EPS
+ SG_ Crc8 : 45|8@1+ (1,0) [0|255] "" EPS
+
+BO_ 354 GW_CENTRAL_Data2: 8 GW_CENTRAL
+ SG_ VoltageSupply_Raw : 0|16@1+ (0.01,0) [0|655.35] "V" ESC,VCU,EPS
+ SG_ BusLoad_Min : 16|8@1+ (0.4,0) [0|102] "%" ABS,EPS
+ SG_ VoltageSupply_Avg : 24|16@1+ (0.01,0) [0|655.35] "V" VCU,ESC,EPS
+ SG_ ErrorCounter : 40|8@1+ (1,0) [0|255] "" VCU,SUSP,ABS,EPS
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" EPS,ABS
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" EPS,ABS
+
+BO_ 358 GW_CENTRAL_Cmd3: 8 GW_CENTRAL
+ SG_ TimeSync_Max : 0|16@1+ (0.1,0) [0|6553.5] "s" EPS,ABS,VCU
+ SG_ VoltageSupply_Min : 16|16@1+ (0.01,0) [0|655.35] "V" VCU
+ SG_ TimeSync_Min : 32|16@1+ (0.1,0) [0|6553.5] "s" SUSP,ESC,VCU
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" VCU,ESC
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" VCU,ESC
+
+BO_ 361 GW_CENTRAL_Info4: 8 GW_CENTRAL
+ SG_ GatewayTemp_Avg : 0|8@1+ (1,-40) [-40|215] "degC" SUSP,VCU,ESC
+ SG_ DiagSessionActive : 8|1@1+ (1,0) [0|1] "" ESC,VCU
+ SG_ GatewayTemp_Min : 9|8@1+ (1,-40) [-40|215] "degC" ABS,SUSP,VCU
+ SG_ TimeSync_Avg : 17|16@1+ (0.1,0) [0|6553.5] "s" SUSP,VCU
+ SG_ GatewayState : 33|4@1+ (1,0) [0|15] "" EPS,ESC,ABS,VCU
+ SG_ BusLoad : 37|8@1+ (0.4,0) [0|102] "%" ABS,SUSP,ESC,VCU
+ SG_ AliveCnt : 45|4@1+ (1,0) [0|15] "" VCU,ESC,SUSP
+ SG_ Crc8 : 49|8@1+ (1,0) [0|255] "" VCU,ESC,SUSP
+
+BA_ "BusType" "CAN";

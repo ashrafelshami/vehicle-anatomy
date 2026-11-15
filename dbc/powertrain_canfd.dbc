@@ -1,0 +1,273 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: ECM TCM BMS INV VCU GW_CENTRAL
+
+BO_ 262 ECM_Status1: 64 ECM
+ SG_ ExhaustTemp_Raw : 0|8@1+ (1,-40) [-40|215] "degC" TCM,VCU,GW_CENTRAL
+ SG_ FuelRate_Avg : 8|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,VCU
+ SG_ EngineSpeed_Min : 16|16@1+ (0.25,0) [0|16383.8] "rpm" BMS,GW_CENTRAL
+ SG_ OilTemp : 32|8@1+ (1,-40) [-40|215] "degC" TCM,GW_CENTRAL
+ SG_ FuelRate_Raw : 40|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,BMS,VCU
+ SG_ IntakeTemp_Raw : 48|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,INV
+ SG_ ManifoldPressure : 56|16@1+ (0.1,0) [0|6553.5] "kPa" GW_CENTRAL,TCM
+ SG_ ThrottlePos_Max : 72|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,BMS,INV
+ SG_ BoostPressure_Avg : 80|16@1+ (0.1,0) [0|6553.5] "kPa" VCU,GW_CENTRAL
+ SG_ AliveCnt : 96|4@1+ (1,0) [0|15] "" GW_CENTRAL,TCM,VCU,BMS
+ SG_ Crc8 : 100|8@1+ (1,0) [0|255] "" GW_CENTRAL,TCM,VCU,BMS
+
+BO_ 270 ECM_Data2: 64 ECM
+ SG_ BoostPressure : 0|16@1+ (0.1,0) [0|6553.5] "kPa" VCU,INV,BMS
+ SG_ BoostPressure_Min : 16|16@1+ (0.1,0) [0|6553.5] "kPa" GW_CENTRAL,INV,BMS
+ SG_ EngineTorque_Min : 32|16@1+ (0.5,-500) [-500|32267.5] "Nm" BMS
+ SG_ CoolantTemp_Max : 48|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,BMS
+ SG_ OilTemp_Raw : 56|8@1+ (1,-40) [-40|215] "degC" TCM,BMS
+ SG_ EngineSpeed_Raw : 64|16@1+ (0.25,0) [0|16383.8] "rpm" TCM,GW_CENTRAL,BMS
+ SG_ AliveCnt : 80|4@1+ (1,0) [0|15] "" BMS,INV,VCU
+ SG_ Crc8 : 84|8@1+ (1,0) [0|255] "" BMS,INV,VCU
+
+BO_ 271 ECM_Cmd3: 64 ECM
+ SG_ KnockLevel_Raw : 0|8@1+ (0.4,0) [0|102] "%" BMS,INV,GW_CENTRAL
+ SG_ TurboSpeed : 8|16@1+ (0.25,0) [0|16383.8] "rpm" BMS,GW_CENTRAL
+ SG_ FuelRate_Max : 24|8@1+ (0.4,0) [0|102] "%" BMS,INV,VCU,GW_CENTRAL
+ SG_ ThrottlePos : 32|8@1+ (0.4,0) [0|102] "%" VCU,INV,GW_CENTRAL
+ SG_ CoolantTemp_Avg : 40|8@1+ (1,-40) [-40|215] "degC" TCM,GW_CENTRAL
+ SG_ KnockLevel_Min : 48|8@1+ (0.4,0) [0|102] "%" INV,VCU,GW_CENTRAL
+ SG_ OilPressure : 56|16@1+ (0.1,0) [0|6553.5] "kPa" TCM,INV,GW_CENTRAL
+ SG_ EngineTorque : 72|16@1+ (0.5,-500) [-500|32267.5] "Nm" BMS,VCU,TCM,GW_CENTRAL
+ SG_ AliveCnt : 88|4@1+ (1,0) [0|15] "" GW_CENTRAL,BMS,VCU
+ SG_ Crc8 : 92|8@1+ (1,0) [0|255] "" GW_CENTRAL,BMS,VCU
+
+BO_ 272 ECM_Info4: 64 ECM
+ SG_ ExhaustTemp_Min : 0|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,VCU,INV
+ SG_ KnockLevel : 8|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,VCU,TCM
+ SG_ EngineState : 16|4@1+ (1,0) [0|15] "" TCM,VCU,INV,GW_CENTRAL
+ SG_ ManifoldPressure_Min : 20|16@1+ (0.1,0) [0|6553.5] "kPa" VCU,TCM,GW_CENTRAL
+ SG_ FuelLevel : 36|8@1+ (0.4,0) [0|102] "%" BMS,GW_CENTRAL
+ SG_ EngineTorque_Raw : 44|16@1+ (0.5,-500) [-500|32267.5] "Nm" TCM,GW_CENTRAL
+ SG_ IntakeTemp_Max : 60|8@1+ (1,-40) [-40|215] "degC" BMS,VCU,GW_CENTRAL
+ SG_ ManifoldPressure_Avg : 68|16@1+ (0.1,0) [0|6553.5] "kPa" BMS,TCM,GW_CENTRAL
+ SG_ BoostPressure_Max : 84|16@1+ (0.1,0) [0|6553.5] "kPa" GW_CENTRAL
+ SG_ AliveCnt : 100|4@1+ (1,0) [0|15] "" GW_CENTRAL,BMS
+ SG_ Crc8 : 104|8@1+ (1,0) [0|255] "" GW_CENTRAL,BMS
+
+BO_ 278 TCM_Status1: 64 TCM
+ SG_ TorqueConverterLock : 0|1@1+ (1,0) [0|1] "" ECM,VCU,BMS
+ SG_ PumpPressure_Avg : 1|16@1+ (0.1,0) [0|6553.5] "kPa" GW_CENTRAL,VCU,BMS
+ SG_ TransOilTemp_Min : 17|8@1+ (1,-40) [-40|215] "degC" ECM,BMS
+ SG_ PumpPressure_Raw : 25|16@1+ (0.1,0) [0|6553.5] "kPa" ECM,BMS
+ SG_ InputShaftSpeed_Max : 41|16@1+ (0.25,0) [0|16383.8] "rpm" BMS
+ SG_ InputShaftSpeed_Raw : 57|16@1+ (0.25,0) [0|16383.8] "rpm" INV,BMS
+ SG_ ClutchPressure : 73|16@1+ (0.1,0) [0|6553.5] "kPa" GW_CENTRAL,INV,BMS
+ SG_ GearActual : 89|4@1+ (1,0) [0|15] "" ECM,INV,BMS
+ SG_ AliveCnt : 93|4@1+ (1,0) [0|15] "" BMS,VCU,INV
+ SG_ Crc8 : 97|8@1+ (1,0) [0|255] "" BMS,VCU,INV
+
+BO_ 286 TCM_Data2: 64 TCM
+ SG_ OutputShaftSpeed_Min : 0|16@1+ (0.25,0) [0|16383.8] "rpm" VCU,GW_CENTRAL
+ SG_ TransOilTemp_Max : 16|8@1+ (1,-40) [-40|215] "degC" INV,GW_CENTRAL
+ SG_ ClutchPressure_Min : 24|16@1+ (0.1,0) [0|6553.5] "kPa" GW_CENTRAL,VCU,ECM
+ SG_ OutputShaftSpeed_Avg : 40|16@1+ (0.25,0) [0|16383.8] "rpm" BMS,ECM,GW_CENTRAL
+ SG_ TransOilTemp_Avg : 56|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,ECM
+ SG_ LaunchControl : 64|1@1+ (1,0) [0|1] "" ECM,GW_CENTRAL
+ SG_ TransOilTemp : 65|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL
+ SG_ InputShaftSpeed : 73|16@1+ (0.25,0) [0|16383.8] "rpm" ECM,GW_CENTRAL
+ SG_ OutputShaftSpeed_Max : 89|16@1+ (0.25,0) [0|16383.8] "rpm" ECM,GW_CENTRAL
+ SG_ AliveCnt : 105|4@1+ (1,0) [0|15] "" GW_CENTRAL,ECM,BMS,VCU
+ SG_ Crc8 : 109|8@1+ (1,0) [0|255] "" GW_CENTRAL,ECM,BMS,VCU
+
+BO_ 290 TCM_Cmd3: 64 TCM
+ SG_ InputShaftSpeed_Avg : 0|16@1+ (0.25,0) [0|16383.8] "rpm" BMS,VCU
+ SG_ ClutchPressure_Max : 16|16@1+ (0.1,0) [0|6553.5] "kPa" ECM,VCU,BMS
+ SG_ TransOilTemp_Raw : 32|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,INV,VCU
+ SG_ ClutchPressure_Raw : 40|16@1+ (0.1,0) [0|6553.5] "kPa" INV,ECM,VCU
+ SG_ OutputShaftSpeed : 56|16@1+ (0.25,0) [0|16383.8] "rpm" INV,ECM,VCU
+ SG_ GearTarget : 72|4@1+ (1,0) [0|15] "" GW_CENTRAL,INV,VCU
+ SG_ OutputShaftSpeed_Raw : 76|16@1+ (0.25,0) [0|16383.8] "rpm" INV,VCU
+ SG_ AliveCnt : 92|4@1+ (1,0) [0|15] "" VCU,ECM,INV
+ SG_ Crc8 : 96|8@1+ (1,0) [0|255] "" VCU,ECM,INV
+
+BO_ 292 BMS_Status1: 64 BMS
+ SG_ CellTemp_Avg : 0|8@1+ (1,-40) [-40|215] "degC" VCU,GW_CENTRAL,ECM
+ SG_ DischargePowerLimit_Raw : 8|16@1+ (0.1,0) [0|6553.5] "kWh" GW_CENTRAL,ECM
+ SG_ DischargePowerLimit_Max : 24|16@1+ (0.1,0) [0|6553.5] "kWh" GW_CENTRAL,ECM
+ SG_ CoolantPumpCmd_Max : 40|8@1+ (0.4,0) [0|102] "%" TCM,ECM
+ SG_ PackCurrent_Max : 48|16@1+ (0.1,-1000) [-1000|5553.5] "A" INV,ECM
+ SG_ PackVoltage : 64|16@1+ (0.01,0) [0|655.35] "V" GW_CENTRAL,ECM
+ SG_ PackPower_Avg : 80|16@1+ (0.1,0) [0|6553.5] "kWh" TCM,GW_CENTRAL,ECM
+ SG_ AliveCnt : 96|4@1+ (1,0) [0|15] "" ECM
+ SG_ Crc8 : 100|8@1+ (1,0) [0|255] "" ECM
+
+BO_ 293 BMS_Data2: 64 BMS
+ SG_ PackVoltage_Avg : 0|16@1+ (0.01,0) [0|655.35] "V" TCM,ECM,INV
+ SG_ DischargePowerLimit_Min : 16|16@1+ (0.1,0) [0|6553.5] "kWh" INV,TCM
+ SG_ ChargeState : 32|4@1+ (1,0) [0|15] "" VCU,GW_CENTRAL,INV,TCM
+ SG_ PackPower : 36|16@1+ (0.1,0) [0|6553.5] "kWh" VCU,GW_CENTRAL,ECM,TCM
+ SG_ PackPower_Max : 52|16@1+ (0.1,0) [0|6553.5] "kWh" TCM,INV
+ SG_ PackCurrent_Avg : 68|16@1+ (0.1,-1000) [-1000|5553.5] "A" VCU,TCM
+ SG_ CellTemp : 84|8@1+ (1,-40) [-40|215] "degC" ECM,TCM
+ SG_ CellTemp_Max : 92|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,TCM
+ SG_ ChargePowerLimit_Min : 100|16@1+ (0.1,0) [0|6553.5] "kWh" TCM
+ SG_ AliveCnt : 116|4@1+ (1,0) [0|15] "" TCM,ECM,VCU
+ SG_ Crc8 : 120|8@1+ (1,0) [0|255] "" TCM,ECM,VCU
+
+BO_ 298 BMS_Cmd3: 64 BMS
+ SG_ CellVoltage_Max : 0|16@1+ (0.01,0) [0|655.35] "V" VCU,GW_CENTRAL
+ SG_ CoolantPumpCmd_Avg : 16|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL
+ SG_ IsolationFault : 24|1@1+ (1,0) [0|1] "" VCU,TCM,ECM,GW_CENTRAL
+ SG_ ChargePowerLimit : 25|16@1+ (0.1,0) [0|6553.5] "kWh" VCU,TCM,GW_CENTRAL
+ SG_ PackVoltage_Max : 41|16@1+ (0.01,0) [0|655.35] "V" INV,GW_CENTRAL
+ SG_ PackCurrent_Raw : 57|16@1+ (0.1,-1000) [-1000|5553.5] "A" ECM,GW_CENTRAL
+ SG_ AliveCnt : 73|4@1+ (1,0) [0|15] "" GW_CENTRAL,TCM,INV
+ SG_ Crc8 : 77|8@1+ (1,0) [0|255] "" GW_CENTRAL,TCM,INV
+
+BO_ 304 BMS_Info4: 64 BMS
+ SG_ CoolantPumpCmd_Min : 0|8@1+ (0.4,0) [0|102] "%" INV,GW_CENTRAL,ECM
+ SG_ DischargePowerLimit : 8|16@1+ (0.1,0) [0|6553.5] "kWh" VCU,ECM,GW_CENTRAL
+ SG_ SOC : 24|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,VCU,ECM
+ SG_ CellTemp_Min : 32|8@1+ (1,-40) [-40|215] "degC" VCU,TCM,GW_CENTRAL
+ SG_ SOH_Avg : 40|8@1+ (0.4,0) [0|102] "%" ECM,VCU,INV,GW_CENTRAL
+ SG_ DischargePowerLimit_Avg : 48|16@1+ (0.1,0) [0|6553.5] "kWh" INV,VCU,GW_CENTRAL
+ SG_ PackVoltage_Min : 64|16@1+ (0.01,0) [0|655.35] "V" ECM,GW_CENTRAL,TCM
+ SG_ SOC_Raw : 80|8@1+ (0.4,0) [0|102] "%" INV,GW_CENTRAL
+ SG_ CellVoltage_Raw : 88|16@1+ (0.01,0) [0|655.35] "V" TCM,GW_CENTRAL
+ SG_ PreChargeActive : 104|1@1+ (1,0) [0|1] "" ECM,VCU,GW_CENTRAL
+ SG_ AliveCnt : 105|4@1+ (1,0) [0|15] "" GW_CENTRAL,INV
+ SG_ Crc8 : 109|8@1+ (1,0) [0|255] "" GW_CENTRAL,INV
+
+BO_ 311 BMS_Limits5: 64 BMS
+ SG_ SOH_Min : 0|8@1+ (0.4,0) [0|102] "%" TCM,ECM,GW_CENTRAL
+ SG_ PackCurrent : 8|16@1+ (0.1,-1000) [-1000|5553.5] "A" GW_CENTRAL,VCU,ECM
+ SG_ CellVoltage_Avg : 24|16@1+ (0.01,0) [0|655.35] "V" INV,TCM,GW_CENTRAL
+ SG_ SOH : 40|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,ECM,VCU
+ SG_ SOC_Min : 48|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,ECM
+ SG_ SOH_Raw : 56|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,TCM,VCU
+ SG_ ChargePowerLimit_Avg : 64|16@1+ (0.1,0) [0|6553.5] "kWh" INV,GW_CENTRAL
+ SG_ AliveCnt : 80|4@1+ (1,0) [0|15] "" GW_CENTRAL,VCU,ECM
+ SG_ Crc8 : 84|8@1+ (1,0) [0|255] "" GW_CENTRAL,VCU,ECM
+
+BO_ 318 INV_Status1: 64 INV
+ SG_ InverterTemp : 0|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,VCU,BMS
+ SG_ TorqueLimit_Raw : 8|16@1+ (0.5,-500) [-500|32267.5] "Nm" TCM,VCU,GW_CENTRAL
+ SG_ RegenLevel_Min : 24|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,TCM,VCU
+ SG_ PhaseCurrentV_Min : 32|16@1+ (0.1,-1000) [-1000|5553.5] "A" VCU,GW_CENTRAL
+ SG_ PhaseCurrentV : 48|16@1+ (0.1,-1000) [-1000|5553.5] "A" VCU,BMS,GW_CENTRAL
+ SG_ PhaseCurrentW : 64|16@1+ (0.1,-1000) [-1000|5553.5] "A" ECM,VCU,BMS,GW_CENTRAL
+ SG_ TorqueLimit : 80|16@1+ (0.5,-500) [-500|32267.5] "Nm" BMS,ECM,TCM,GW_CENTRAL
+ SG_ MotorTemp_Raw : 96|8@1+ (1,-40) [-40|215] "degC" TCM,VCU,GW_CENTRAL
+ SG_ AliveCnt : 104|4@1+ (1,0) [0|15] "" GW_CENTRAL,ECM,TCM,VCU
+ SG_ Crc8 : 108|8@1+ (1,0) [0|255] "" GW_CENTRAL,ECM,TCM,VCU
+
+BO_ 320 INV_Data2: 64 INV
+ SG_ PhaseCurrentW_Raw : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" GW_CENTRAL,BMS,ECM
+ SG_ PhaseCurrentW_Avg : 16|16@1+ (0.1,-1000) [-1000|5553.5] "A" BMS,VCU,ECM
+ SG_ InverterState : 32|4@1+ (1,0) [0|15] "" GW_CENTRAL,ECM
+ SG_ PhaseCurrentU_Min : 36|16@1+ (0.1,-1000) [-1000|5553.5] "A" ECM,VCU,GW_CENTRAL
+ SG_ MotorTorque : 52|16@1+ (0.5,-500) [-500|32267.5] "Nm" VCU,ECM
+ SG_ MotorTorque_Avg : 68|16@1+ (0.5,-500) [-500|32267.5] "Nm" GW_CENTRAL,ECM
+ SG_ RegenLevel_Raw : 84|8@1+ (0.4,0) [0|102] "%" ECM
+ SG_ PhaseCurrentU_Raw : 92|16@1+ (0.1,-1000) [-1000|5553.5] "A" BMS,GW_CENTRAL,ECM
+ SG_ TorqueLimit_Max : 108|16@1+ (0.5,-500) [-500|32267.5] "Nm" TCM,ECM
+ SG_ AliveCnt : 124|4@1+ (1,0) [0|15] "" ECM,TCM,BMS
+ SG_ Crc8 : 128|8@1+ (1,0) [0|255] "" ECM,TCM,BMS
+
+BO_ 325 INV_Cmd3: 64 INV
+ SG_ PhaseCurrentU : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" GW_CENTRAL,BMS
+ SG_ MotorTemp_Max : 16|8@1+ (1,-40) [-40|215] "degC" TCM,VCU,BMS,GW_CENTRAL
+ SG_ RegenLevel : 24|8@1+ (0.4,0) [0|102] "%" VCU,GW_CENTRAL
+ SG_ MotorSpeed_Min : 32|16@1+ (0.25,0) [0|16383.8] "rpm" BMS,TCM,VCU,GW_CENTRAL
+ SG_ MotorSpeed_Raw : 48|16@1+ (0.25,0) [0|16383.8] "rpm" TCM,ECM,BMS,GW_CENTRAL
+ SG_ DCLinkVoltage : 64|16@1+ (0.01,0) [0|655.35] "V" VCU,TCM,GW_CENTRAL
+ SG_ TorqueLimit_Avg : 80|16@1+ (0.5,-500) [-500|32267.5] "Nm" ECM,GW_CENTRAL
+ SG_ DCLinkVoltage_Max : 96|16@1+ (0.01,0) [0|655.35] "V" TCM,VCU,BMS,GW_CENTRAL
+ SG_ MotorTorque_Raw : 112|16@1+ (0.5,-500) [-500|32267.5] "Nm" GW_CENTRAL
+ SG_ AliveCnt : 128|4@1+ (1,0) [0|15] "" GW_CENTRAL,BMS,TCM,ECM
+ SG_ Crc8 : 132|8@1+ (1,0) [0|255] "" GW_CENTRAL,BMS,TCM,ECM
+
+BO_ 329 VCU_Status1: 64 VCU
+ SG_ BrakePedalPos_Max : 0|8@1+ (0.4,0) [0|102] "%" BMS,GW_CENTRAL,TCM,INV
+ SG_ ReadyToDrive : 8|1@1+ (1,0) [0|1] "" TCM,INV
+ SG_ CruiseSet_Min : 9|16@1+ (0.01,0) [0|655.35] "km/h" ECM,INV
+ SG_ TorqueSplit_Raw : 25|8@1+ (0.4,0) [0|102] "%" BMS,INV
+ SG_ BrakePedalPos_Raw : 33|8@1+ (0.4,0) [0|102] "%" TCM,INV
+ SG_ TorqueSplit : 41|8@1+ (0.4,0) [0|102] "%" TCM,ECM,INV
+ SG_ ThermalReq_Max : 49|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,INV
+ SG_ AliveCnt : 57|4@1+ (1,0) [0|15] "" INV,ECM
+ SG_ Crc8 : 61|8@1+ (1,0) [0|255] "" INV,ECM
+
+BO_ 336 VCU_Data2: 64 VCU
+ SG_ PowerLimit_Raw : 0|16@1+ (0.1,0) [0|6553.5] "kWh" ECM,GW_CENTRAL
+ SG_ PedalPos : 16|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL
+ SG_ VehicleSpeed_Min : 24|16@1+ (0.01,0) [0|655.35] "km/h" BMS,GW_CENTRAL
+ SG_ TorqueRequest_Raw : 40|16@1+ (0.5,-500) [-500|32267.5] "Nm" ECM,TCM,GW_CENTRAL
+ SG_ PowerLimit : 56|16@1+ (0.1,0) [0|6553.5] "kWh" TCM,BMS,GW_CENTRAL
+ SG_ ThermalReq_Avg : 72|8@1+ (0.4,0) [0|102] "%" INV,GW_CENTRAL
+ SG_ KeyState : 80|4@1+ (1,0) [0|15] "" BMS,GW_CENTRAL
+ SG_ BrakePedalPos_Min : 84|8@1+ (0.4,0) [0|102] "%" TCM,GW_CENTRAL,ECM
+ SG_ CruiseActive : 92|1@1+ (1,0) [0|1] "" TCM,BMS,GW_CENTRAL
+ SG_ PedalPos_Avg : 93|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,ECM,TCM
+ SG_ AliveCnt : 101|4@1+ (1,0) [0|15] "" GW_CENTRAL,INV
+ SG_ Crc8 : 105|8@1+ (1,0) [0|255] "" GW_CENTRAL,INV
+
+BO_ 343 VCU_Cmd3: 64 VCU
+ SG_ BrakePedalPos : 0|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,ECM,INV
+ SG_ EcoMode : 8|1@1+ (1,0) [0|1] "" ECM,INV
+ SG_ CruiseSet_Raw : 9|16@1+ (0.01,0) [0|655.35] "km/h" TCM,INV
+ SG_ ThermalReq_Min : 25|8@1+ (0.4,0) [0|102] "%" ECM,INV
+ SG_ VehicleSpeed : 33|16@1+ (0.01,0) [0|655.35] "km/h" GW_CENTRAL,INV
+ SG_ TorqueSplit_Avg : 49|8@1+ (0.4,0) [0|102] "%" BMS,ECM,TCM,INV
+ SG_ AliveCnt : 57|4@1+ (1,0) [0|15] "" INV,BMS,ECM
+ SG_ Crc8 : 61|8@1+ (1,0) [0|255] "" INV,BMS,ECM
+
+BO_ 348 GW_CENTRAL_Status1: 64 GW_CENTRAL
+ SG_ BusLoad_Min : 0|8@1+ (0.4,0) [0|102] "%" VCU,TCM,INV
+ SG_ OTAActive : 8|1@1+ (1,0) [0|1] "" INV,VCU,ECM
+ SG_ WakeSource : 9|4@1+ (1,0) [0|15] "" INV,ECM,TCM
+ SG_ TimeSync_Max : 13|16@1+ (0.1,0) [0|6553.5] "s" TCM,INV
+ SG_ GatewayTemp_Min : 29|8@1+ (1,-40) [-40|215] "degC" VCU,BMS,INV
+ SG_ DiagSessionActive : 37|1@1+ (1,0) [0|1] "" BMS,TCM,INV
+ SG_ GatewayTemp : 38|8@1+ (1,-40) [-40|215] "degC" ECM,INV
+ SG_ TimeSync_Avg : 46|16@1+ (0.1,0) [0|6553.5] "s" VCU,BMS,TCM,INV
+ SG_ AliveCnt : 62|4@1+ (1,0) [0|15] "" INV
+ SG_ Crc8 : 66|8@1+ (1,0) [0|255] "" INV
+
+BO_ 354 GW_CENTRAL_Data2: 64 GW_CENTRAL
+ SG_ TimeSync_Min : 0|16@1+ (0.1,0) [0|6553.5] "s" VCU,ECM,BMS
+ SG_ SleepRequest : 16|1@1+ (1,0) [0|1] "" BMS
+ SG_ GatewayTemp_Max : 17|8@1+ (1,-40) [-40|215] "degC" BMS,ECM
+ SG_ GatewayTemp_Raw : 25|8@1+ (1,-40) [-40|215] "degC" INV,VCU,BMS
+ SG_ VoltageSupply_Min : 33|16@1+ (0.01,0) [0|655.35] "V" INV,ECM,BMS
+ SG_ BusLoad_Raw : 49|8@1+ (0.4,0) [0|102] "%" ECM,BMS
+ SG_ VoltageSupply : 57|16@1+ (0.01,0) [0|655.35] "V" VCU,BMS
+ SG_ AliveCnt : 73|4@1+ (1,0) [0|15] "" BMS,VCU
+ SG_ Crc8 : 77|8@1+ (1,0) [0|255] "" BMS,VCU
+
+BO_ 360 GW_CENTRAL_Cmd3: 64 GW_CENTRAL
+ SG_ VoltageSupply_Avg : 0|16@1+ (0.01,0) [0|655.35] "V" VCU,BMS
+ SG_ BusLoad_Max : 16|8@1+ (0.4,0) [0|102] "%" TCM,ECM,INV,BMS
+ SG_ TimeSync : 24|16@1+ (0.1,0) [0|6553.5] "s" TCM,VCU,ECM,BMS
+ SG_ ErrorCounter : 40|8@1+ (1,0) [0|255] "" VCU,ECM,BMS
+ SG_ GatewayState : 48|4@1+ (1,0) [0|15] "" BMS,ECM,INV
+ SG_ VoltageSupply_Max : 52|16@1+ (0.01,0) [0|655.35] "V" VCU,BMS
+ SG_ TimeSync_Raw : 68|16@1+ (0.1,0) [0|6553.5] "s" ECM,VCU,INV,BMS
+ SG_ VoltageSupply_Raw : 84|16@1+ (0.01,0) [0|655.35] "V" VCU,BMS
+ SG_ GatewayTemp_Avg : 100|8@1+ (1,-40) [-40|215] "degC" VCU,BMS
+ SG_ AliveCnt : 108|4@1+ (1,0) [0|15] "" BMS,INV
+ SG_ Crc8 : 112|8@1+ (1,0) [0|255] "" BMS,INV
+
+BO_ 368 GW_CENTRAL_Info4: 64 GW_CENTRAL
+ SG_ NetworkMgmtState : 0|4@1+ (1,0) [0|15] "" TCM,INV,BMS
+ SG_ BusLoad : 4|8@1+ (0.4,0) [0|102] "%" BMS,TCM,INV
+ SG_ RoutedFrameCount : 12|8@1+ (1,0) [0|255] "" BMS
+ SG_ BusLoad_Avg : 20|8@1+ (0.4,0) [0|102] "%" ECM,BMS
+ SG_ AliveCnt : 28|4@1+ (1,0) [0|15] "" BMS,TCM,ECM
+ SG_ Crc8 : 32|8@1+ (1,0) [0|255] "" BMS,TCM,ECM
+
+BO_ 375 GW_CENTRAL_Limits5: 64 GW_CENTRAL
+ SG_ AliveCnt : 0|4@1+ (1,0) [0|15] "" INV,ECM,TCM
+ SG_ Crc8 : 4|8@1+ (1,0) [0|255] "" INV,ECM,TCM
+
+BA_ "BusType" "CAN FD";

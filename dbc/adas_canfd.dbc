@@ -1,0 +1,445 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: ADAS_DOM RADAR_F RADAR_RL RADAR_RR CAM_F LIDAR PARK_ASSIST EPS GW_CENTRAL
+
+BO_ 257 ADAS_DOM_Status1: 64 ADAS_DOM
+ SG_ EgoLanePos_Min : 0|16@1+ (0.01,0) [0|655.35] "m" CAM_F
+ SG_ FusionConfidence_Avg : 16|8@1+ (0.4,0) [0|102] "%" RADAR_RL,RADAR_RR,PARK_ASSIST,CAM_F
+ SG_ TargetSpeedRel : 24|16@1+ (0.01,0) [0|655.35] "km/h" CAM_F,LIDAR
+ SG_ AEBDecel : 40|12@1+ (0.05,-100) [-100|104.75] "m/s2" CAM_F
+ SG_ HandsOnWheel : 52|1@1+ (1,0) [0|1] "" RADAR_RL,GW_CENTRAL,CAM_F
+ SG_ EgoLanePos_Avg : 53|16@1+ (0.01,0) [0|655.35] "m" EPS,CAM_F
+ SG_ AEBDecel_Min : 69|12@1+ (0.05,-100) [-100|104.75] "m/s2" RADAR_F,PARK_ASSIST,CAM_F
+ SG_ TargetDistance_Min : 81|16@1+ (0.01,0) [0|655.35] "m" EPS,CAM_F
+ SG_ AliveCnt : 97|4@1+ (1,0) [0|15] "" CAM_F,LIDAR
+ SG_ Crc8 : 101|8@1+ (1,0) [0|255] "" CAM_F,LIDAR
+
+BO_ 258 ADAS_DOM_Data2: 64 ADAS_DOM
+ SG_ ADASState : 0|4@1+ (1,0) [0|15] "" LIDAR,CAM_F,GW_CENTRAL
+ SG_ LKAReq : 4|1@1+ (1,0) [0|1] "" RADAR_RL,RADAR_RR,GW_CENTRAL
+ SG_ AEBDecel_Raw : 5|12@1+ (0.05,-100) [-100|104.75] "m/s2" LIDAR,PARK_ASSIST,EPS,GW_CENTRAL
+ SG_ ObjectCount : 17|8@1+ (1,0) [0|255] "" RADAR_RL,EPS,RADAR_RR,GW_CENTRAL
+ SG_ SpeedLimit_Raw : 25|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_RL,RADAR_RR,GW_CENTRAL
+ SG_ AEBDecel_Max : 41|12@1+ (0.05,-100) [-100|104.75] "m/s2" EPS,GW_CENTRAL
+ SG_ DriverAttention_Min : 53|8@1+ (0.4,0) [0|102] "%" RADAR_F,CAM_F,GW_CENTRAL
+ SG_ SteerCmd_Raw : 61|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RR,EPS,LIDAR,GW_CENTRAL
+ SG_ TargetDistance_Max : 77|16@1+ (0.01,0) [0|655.35] "m" CAM_F,LIDAR,GW_CENTRAL
+ SG_ AliveCnt : 93|4@1+ (1,0) [0|15] "" GW_CENTRAL,CAM_F,PARK_ASSIST,RADAR_F
+ SG_ Crc8 : 97|8@1+ (1,0) [0|255] "" GW_CENTRAL,CAM_F,PARK_ASSIST,RADAR_F
+
+BO_ 265 ADAS_DOM_Cmd3: 64 ADAS_DOM
+ SG_ SteerCmd : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_F,CAM_F,GW_CENTRAL,LIDAR
+ SG_ ACCSetSpeed_Raw : 16|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_F,RADAR_RR,GW_CENTRAL,LIDAR
+ SG_ TargetDistance_Avg : 32|16@1+ (0.01,0) [0|655.35] "m" RADAR_F,LIDAR
+ SG_ TargetSpeedRel_Min : 48|16@1+ (0.01,0) [0|655.35] "km/h" PARK_ASSIST,RADAR_RR,LIDAR
+ SG_ LaneChangeAssist : 64|4@1+ (1,0) [0|15] "" GW_CENTRAL,LIDAR,RADAR_RR
+ SG_ SpeedLimit : 68|16@1+ (0.01,0) [0|655.35] "km/h" PARK_ASSIST,LIDAR
+ SG_ FusionConfidence_Min : 84|8@1+ (0.4,0) [0|102] "%" PARK_ASSIST,LIDAR
+ SG_ DriverAttention_Raw : 92|8@1+ (0.4,0) [0|102] "%" CAM_F,LIDAR
+ SG_ TargetDistance : 100|16@1+ (0.01,0) [0|655.35] "m" CAM_F,RADAR_RR,EPS,LIDAR
+ SG_ SteerCmd_Max : 116|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIDAR,GW_CENTRAL
+ SG_ AliveCnt : 132|4@1+ (1,0) [0|15] "" LIDAR,RADAR_F
+ SG_ Crc8 : 136|8@1+ (1,0) [0|255] "" LIDAR,RADAR_F
+
+BO_ 273 ADAS_DOM_Info4: 64 ADAS_DOM
+ SG_ ACCSetSpeed_Avg : 0|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_RL,GW_CENTRAL
+ SG_ EgoLanePos : 16|16@1+ (0.01,0) [0|655.35] "m" CAM_F,RADAR_RL,GW_CENTRAL
+ SG_ DriverAttention : 32|8@1+ (0.4,0) [0|102] "%" RADAR_RL,RADAR_RR,CAM_F,GW_CENTRAL
+ SG_ FusionConfidence_Raw : 40|8@1+ (0.4,0) [0|102] "%" RADAR_RR,GW_CENTRAL
+ SG_ DriverAttention_Avg : 48|8@1+ (0.4,0) [0|102] "%" CAM_F,GW_CENTRAL
+ SG_ AEBDecel_Avg : 56|12@1+ (0.05,-100) [-100|104.75] "m/s2" LIDAR,EPS,RADAR_RL,GW_CENTRAL
+ SG_ SteerCmd_Min : 68|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIDAR,GW_CENTRAL,PARK_ASSIST
+ SG_ FusionConfidence : 84|8@1+ (0.4,0) [0|102] "%" RADAR_RL,RADAR_F,GW_CENTRAL
+ SG_ AliveCnt : 92|4@1+ (1,0) [0|15] "" GW_CENTRAL,EPS,RADAR_RL,PARK_ASSIST
+ SG_ Crc8 : 96|8@1+ (1,0) [0|255] "" GW_CENTRAL,EPS,RADAR_RL,PARK_ASSIST
+
+BO_ 277 ADAS_DOM_Limits5: 64 ADAS_DOM
+ SG_ ACCSetSpeed : 0|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_RR,GW_CENTRAL
+ SG_ TargetSpeedRel_Max : 16|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_RL,GW_CENTRAL
+ SG_ TargetDistance_Raw : 32|16@1+ (0.01,0) [0|655.35] "m" LIDAR,GW_CENTRAL
+ SG_ EgoLanePos_Max : 48|16@1+ (0.01,0) [0|655.35] "m" LIDAR,RADAR_RR,EPS,GW_CENTRAL
+ SG_ SpeedLimit_Avg : 64|16@1+ (0.01,0) [0|655.35] "km/h" LIDAR,RADAR_F,GW_CENTRAL
+ SG_ FusionConfidence_Max : 80|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL
+ SG_ AliveCnt : 88|4@1+ (1,0) [0|15] "" GW_CENTRAL,PARK_ASSIST,LIDAR
+ SG_ Crc8 : 92|8@1+ (1,0) [0|255] "" GW_CENTRAL,PARK_ASSIST,LIDAR
+
+BO_ 284 RADAR_F_Status1: 64 RADAR_F
+ SG_ Obj4Angle_Min : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" EPS,RADAR_RL
+ SG_ Obj1Speed_Min : 16|16@1+ (0.01,0) [0|655.35] "km/h" CAM_F,RADAR_RL
+ SG_ Obj3Angle_Avg : 32|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RL,EPS
+ SG_ Obj3Angle_Min : 48|16@1+ (0.1,-1000) [-1000|5553.5] "deg" CAM_F,ADAS_DOM,RADAR_RL
+ SG_ Obj5Dist_Avg : 64|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL,CAM_F,RADAR_RL
+ SG_ Obj1Conf : 80|8@1+ (0.4,0) [0|102] "%" PARK_ASSIST,CAM_F,LIDAR,RADAR_RL
+ SG_ Obj1Conf_Raw : 88|8@1+ (0.4,0) [0|102] "%" LIDAR,CAM_F,RADAR_RL
+ SG_ Obj4Speed : 96|16@1+ (0.01,0) [0|655.35] "km/h" CAM_F,GW_CENTRAL,RADAR_RL
+ SG_ Obj3Dist_Min : 112|16@1+ (0.01,0) [0|655.35] "m" RADAR_RR,RADAR_RL
+ SG_ Obj4Angle_Raw : 128|16@1+ (0.1,-1000) [-1000|5553.5] "deg" PARK_ASSIST,ADAS_DOM,EPS,RADAR_RL
+ SG_ AliveCnt : 144|4@1+ (1,0) [0|15] "" RADAR_RL
+ SG_ Crc8 : 148|8@1+ (1,0) [0|255] "" RADAR_RL
+
+BO_ 292 RADAR_F_Data2: 64 RADAR_F
+ SG_ RadarTemp_Max : 0|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL
+ SG_ Obj1Conf_Max : 8|8@1+ (0.4,0) [0|102] "%" RADAR_RL,RADAR_RR,PARK_ASSIST,GW_CENTRAL
+ SG_ Obj1Dist : 16|16@1+ (0.01,0) [0|655.35] "m" PARK_ASSIST,RADAR_RL,GW_CENTRAL
+ SG_ Obj2Dist_Max : 32|16@1+ (0.01,0) [0|655.35] "m" EPS,GW_CENTRAL
+ SG_ Obj2Speed_Min : 48|16@1+ (0.01,0) [0|655.35] "km/h" GW_CENTRAL,PARK_ASSIST
+ SG_ Obj2Dist_Avg : 64|16@1+ (0.01,0) [0|655.35] "m" EPS,ADAS_DOM,GW_CENTRAL
+ SG_ Obj3Speed_Max : 80|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_RL,RADAR_RR,GW_CENTRAL
+ SG_ Obj2Conf_Min : 96|8@1+ (0.4,0) [0|102] "%" RADAR_RL,GW_CENTRAL
+ SG_ AliveCnt : 104|4@1+ (1,0) [0|15] "" GW_CENTRAL,ADAS_DOM,PARK_ASSIST
+ SG_ Crc8 : 108|8@1+ (1,0) [0|255] "" GW_CENTRAL,ADAS_DOM,PARK_ASSIST
+
+BO_ 295 RADAR_F_Cmd3: 64 RADAR_F
+ SG_ Obj1Speed_Max : 0|16@1+ (0.01,0) [0|655.35] "km/h" GW_CENTRAL,EPS
+ SG_ Obj5Angle_Min : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RL,LIDAR,GW_CENTRAL
+ SG_ Obj1Conf_Avg : 32|8@1+ (0.4,0) [0|102] "%" RADAR_RL,PARK_ASSIST,ADAS_DOM,GW_CENTRAL
+ SG_ Obj3Speed_Min : 40|16@1+ (0.01,0) [0|655.35] "km/h" LIDAR,GW_CENTRAL
+ SG_ Obj4Dist_Max : 56|16@1+ (0.01,0) [0|655.35] "m" LIDAR,RADAR_RL,GW_CENTRAL
+ SG_ Obj1Angle_Min : 72|16@1+ (0.1,-1000) [-1000|5553.5] "deg" PARK_ASSIST,ADAS_DOM,GW_CENTRAL
+ SG_ Obj5Angle : 88|16@1+ (0.1,-1000) [-1000|5553.5] "deg" CAM_F,EPS,GW_CENTRAL
+ SG_ AliveCnt : 104|4@1+ (1,0) [0|15] "" GW_CENTRAL,ADAS_DOM,RADAR_RL,CAM_F
+ SG_ Crc8 : 108|8@1+ (1,0) [0|255] "" GW_CENTRAL,ADAS_DOM,RADAR_RL,CAM_F
+
+BO_ 301 RADAR_F_Info4: 64 RADAR_F
+ SG_ Obj4Dist_Raw : 0|16@1+ (0.01,0) [0|655.35] "m" EPS,ADAS_DOM
+ SG_ Obj3Angle_Raw : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" CAM_F,ADAS_DOM
+ SG_ RadarState : 32|4@1+ (1,0) [0|15] "" ADAS_DOM,RADAR_RL
+ SG_ Obj3Dist_Avg : 36|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL,ADAS_DOM
+ SG_ Obj5Dist_Min : 52|16@1+ (0.01,0) [0|655.35] "m" RADAR_RR,ADAS_DOM,CAM_F
+ SG_ Obj3Speed_Raw : 68|16@1+ (0.01,0) [0|655.35] "km/h" GW_CENTRAL,RADAR_RL,ADAS_DOM
+ SG_ AliveCnt : 84|4@1+ (1,0) [0|15] "" ADAS_DOM,EPS,CAM_F
+ SG_ Crc8 : 88|8@1+ (1,0) [0|255] "" ADAS_DOM,EPS,CAM_F
+
+BO_ 308 RADAR_F_Limits5: 64 RADAR_F
+ SG_ Obj1Dist_Raw : 0|16@1+ (0.01,0) [0|655.35] "m" ADAS_DOM,GW_CENTRAL,CAM_F
+ SG_ Obj2Angle_Min : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" EPS,RADAR_RL,CAM_F,GW_CENTRAL
+ SG_ Obj4Speed_Min : 32|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_RR,GW_CENTRAL,CAM_F
+ SG_ ObjCount : 48|8@1+ (1,0) [0|255] "" LIDAR,RADAR_RR,GW_CENTRAL
+ SG_ Obj5Angle_Max : 56|16@1+ (0.1,-1000) [-1000|5553.5] "deg" EPS,LIDAR,GW_CENTRAL
+ SG_ Obj3Angle_Max : 72|16@1+ (0.1,-1000) [-1000|5553.5] "deg" CAM_F,RADAR_RR,GW_CENTRAL
+ SG_ RadarTemp_Raw : 88|8@1+ (1,-40) [-40|215] "degC" CAM_F,RADAR_RR,ADAS_DOM,GW_CENTRAL
+ SG_ Obj5Conf_Avg : 96|8@1+ (0.4,0) [0|102] "%" LIDAR,GW_CENTRAL
+ SG_ Blind : 104|1@1+ (1,0) [0|1] "" RADAR_RR,GW_CENTRAL
+ SG_ Obj2Dist : 105|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL,ADAS_DOM
+ SG_ AliveCnt : 121|4@1+ (1,0) [0|15] "" GW_CENTRAL,CAM_F,RADAR_RR,EPS
+ SG_ Crc8 : 125|8@1+ (1,0) [0|255] "" GW_CENTRAL,CAM_F,RADAR_RR,EPS
+
+BO_ 313 RADAR_RL_Status1: 64 RADAR_RL
+ SG_ Obj2Conf_Raw : 0|8@1+ (0.4,0) [0|102] "%" PARK_ASSIST,GW_CENTRAL
+ SG_ Obj1Dist : 8|16@1+ (0.01,0) [0|655.35] "m" RADAR_F,ADAS_DOM,RADAR_RR,GW_CENTRAL
+ SG_ Obj3Conf_Avg : 24|8@1+ (0.4,0) [0|102] "%" CAM_F,GW_CENTRAL
+ SG_ Obj3Speed_Raw : 32|16@1+ (0.01,0) [0|655.35] "km/h" LIDAR,CAM_F,GW_CENTRAL
+ SG_ Obj3Speed_Min : 48|16@1+ (0.01,0) [0|655.35] "km/h" GW_CENTRAL,RADAR_RR
+ SG_ Obj2Angle_Min : 64|16@1+ (0.1,-1000) [-1000|5553.5] "deg" ADAS_DOM,EPS,RADAR_F,GW_CENTRAL
+ SG_ Obj3Dist : 80|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL,RADAR_F,ADAS_DOM
+ SG_ AliveCnt : 96|4@1+ (1,0) [0|15] "" GW_CENTRAL,RADAR_F,PARK_ASSIST,CAM_F
+ SG_ Crc8 : 100|8@1+ (1,0) [0|255] "" GW_CENTRAL,RADAR_F,PARK_ASSIST,CAM_F
+
+BO_ 315 RADAR_RL_Data2: 64 RADAR_RL
+ SG_ Obj3Speed_Avg : 0|16@1+ (0.01,0) [0|655.35] "km/h" LIDAR,PARK_ASSIST,GW_CENTRAL
+ SG_ Obj2Speed_Max : 16|16@1+ (0.01,0) [0|655.35] "km/h" EPS,GW_CENTRAL
+ SG_ Obj3Dist_Min : 32|16@1+ (0.01,0) [0|655.35] "m" EPS,CAM_F,RADAR_F,GW_CENTRAL
+ SG_ Obj1Conf : 48|8@1+ (0.4,0) [0|102] "%" PARK_ASSIST,RADAR_F,GW_CENTRAL
+ SG_ Obj2Conf_Max : 56|8@1+ (0.4,0) [0|102] "%" EPS,GW_CENTRAL
+ SG_ Obj2Speed : 64|16@1+ (0.01,0) [0|655.35] "km/h" LIDAR,GW_CENTRAL
+ SG_ Obj1Conf_Max : 80|8@1+ (0.4,0) [0|102] "%" ADAS_DOM,PARK_ASSIST,LIDAR,GW_CENTRAL
+ SG_ Obj1Speed_Raw : 88|16@1+ (0.01,0) [0|655.35] "km/h" ADAS_DOM,EPS,GW_CENTRAL
+ SG_ RadarTemp_Avg : 104|8@1+ (1,-40) [-40|215] "degC" EPS,PARK_ASSIST,GW_CENTRAL
+ SG_ Obj1Dist_Min : 112|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL
+ SG_ Obj1Angle_Min : 128|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_F,CAM_F,EPS,GW_CENTRAL
+ SG_ AliveCnt : 144|4@1+ (1,0) [0|15] "" GW_CENTRAL,RADAR_F,PARK_ASSIST
+ SG_ Crc8 : 148|8@1+ (1,0) [0|255] "" GW_CENTRAL,RADAR_F,PARK_ASSIST
+
+BO_ 317 RADAR_RL_Cmd3: 64 RADAR_RL
+ SG_ RadarState : 0|4@1+ (1,0) [0|15] "" EPS,GW_CENTRAL,RADAR_RR,ADAS_DOM
+ SG_ Obj1Angle : 4|16@1+ (0.1,-1000) [-1000|5553.5] "deg" ADAS_DOM,RADAR_F
+ SG_ Obj3Angle_Max : 20|16@1+ (0.1,-1000) [-1000|5553.5] "deg" EPS,GW_CENTRAL,PARK_ASSIST,ADAS_DOM
+ SG_ Obj3Conf_Raw : 36|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,PARK_ASSIST,RADAR_RR,ADAS_DOM
+ SG_ Obj2Angle_Raw : 44|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIDAR,PARK_ASSIST,EPS,ADAS_DOM
+ SG_ Obj1Speed_Avg : 60|16@1+ (0.01,0) [0|655.35] "km/h" EPS,RADAR_F,ADAS_DOM
+ SG_ Obj3Conf_Max : 76|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,ADAS_DOM
+ SG_ Obj3Angle_Avg : 84|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RR,LIDAR,PARK_ASSIST,ADAS_DOM
+ SG_ AliveCnt : 100|4@1+ (1,0) [0|15] "" ADAS_DOM
+ SG_ Crc8 : 104|8@1+ (1,0) [0|255] "" ADAS_DOM
+
+BO_ 318 RADAR_RR_Status1: 64 RADAR_RR
+ SG_ Obj2Speed_Avg : 0|16@1+ (0.01,0) [0|655.35] "km/h" LIDAR,GW_CENTRAL,EPS,PARK_ASSIST
+ SG_ Obj2Dist_Max : 16|16@1+ (0.01,0) [0|655.35] "m" EPS,ADAS_DOM,PARK_ASSIST
+ SG_ RadarTemp_Min : 32|8@1+ (1,-40) [-40|215] "degC" LIDAR,PARK_ASSIST
+ SG_ Obj3Conf_Avg : 40|8@1+ (0.4,0) [0|102] "%" RADAR_RL,LIDAR,EPS,PARK_ASSIST
+ SG_ Obj3Angle_Raw : 48|16@1+ (0.1,-1000) [-1000|5553.5] "deg" PARK_ASSIST
+ SG_ RadarTemp_Raw : 64|8@1+ (1,-40) [-40|215] "degC" RADAR_F,CAM_F,PARK_ASSIST
+ SG_ Obj2Dist_Min : 72|16@1+ (0.01,0) [0|655.35] "m" LIDAR,PARK_ASSIST
+ SG_ AliveCnt : 88|4@1+ (1,0) [0|15] "" PARK_ASSIST
+ SG_ Crc8 : 92|8@1+ (1,0) [0|255] "" PARK_ASSIST
+
+BO_ 324 RADAR_RR_Data2: 64 RADAR_RR
+ SG_ Obj2Speed_Min : 0|16@1+ (0.01,0) [0|655.35] "km/h" CAM_F,GW_CENTRAL
+ SG_ BlindSpot : 16|1@1+ (1,0) [0|1] "" CAM_F,GW_CENTRAL
+ SG_ Obj2Angle_Raw : 17|16@1+ (0.1,-1000) [-1000|5553.5] "deg" PARK_ASSIST,GW_CENTRAL
+ SG_ Obj3Conf_Max : 33|8@1+ (0.4,0) [0|102] "%" PARK_ASSIST,CAM_F,GW_CENTRAL
+ SG_ Obj1Speed_Avg : 41|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_F,RADAR_RL,GW_CENTRAL
+ SG_ Obj2Conf_Min : 57|8@1+ (0.4,0) [0|102] "%" LIDAR,PARK_ASSIST,GW_CENTRAL
+ SG_ Obj2Angle_Max : 65|16@1+ (0.1,-1000) [-1000|5553.5] "deg" CAM_F,GW_CENTRAL
+ SG_ AliveCnt : 81|4@1+ (1,0) [0|15] "" GW_CENTRAL,RADAR_RL
+ SG_ Crc8 : 85|8@1+ (1,0) [0|255] "" GW_CENTRAL,RADAR_RL
+
+BO_ 328 RADAR_RR_Cmd3: 64 RADAR_RR
+ SG_ Obj1Angle_Avg : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RL,CAM_F,EPS,GW_CENTRAL
+ SG_ Obj3Dist_Raw : 16|16@1+ (0.01,0) [0|655.35] "m" LIDAR,ADAS_DOM,RADAR_F,GW_CENTRAL
+ SG_ Obj2Dist : 32|16@1+ (0.01,0) [0|655.35] "m" EPS,RADAR_F,GW_CENTRAL
+ SG_ Obj3Speed_Avg : 48|16@1+ (0.01,0) [0|655.35] "km/h" GW_CENTRAL,EPS,LIDAR
+ SG_ Obj3Conf_Raw : 64|8@1+ (0.4,0) [0|102] "%" RADAR_RL,GW_CENTRAL
+ SG_ Obj3Conf_Min : 72|8@1+ (0.4,0) [0|102] "%" PARK_ASSIST,EPS,GW_CENTRAL
+ SG_ Obj2Conf_Raw : 80|8@1+ (0.4,0) [0|102] "%" PARK_ASSIST,GW_CENTRAL
+ SG_ Obj2Conf : 88|8@1+ (0.4,0) [0|102] "%" RADAR_RL,ADAS_DOM,RADAR_F,GW_CENTRAL
+ SG_ AliveCnt : 96|4@1+ (1,0) [0|15] "" GW_CENTRAL,EPS,ADAS_DOM
+ SG_ Crc8 : 100|8@1+ (1,0) [0|255] "" GW_CENTRAL,EPS,ADAS_DOM
+
+BO_ 332 CAM_F_Status1: 64 CAM_F
+ SG_ ExposureLevel : 0|8@1+ (0.4,0) [0|102] "%" RADAR_F,EPS
+ SG_ LaneConfidence : 8|8@1+ (0.4,0) [0|102] "%" ADAS_DOM,RADAR_F,LIDAR,EPS
+ SG_ LaneConfidence_Avg : 16|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,EPS,RADAR_RL
+ SG_ HighBeamAssist : 24|1@1+ (1,0) [0|1] "" ADAS_DOM,GW_CENTRAL,EPS
+ SG_ ExposureLevel_Max : 25|8@1+ (0.4,0) [0|102] "%" RADAR_RR,EPS
+ SG_ ExposureLevel_Raw : 33|8@1+ (0.4,0) [0|102] "%" EPS,RADAR_RR,ADAS_DOM
+ SG_ LaneConfidence_Max : 41|8@1+ (0.4,0) [0|102] "%" RADAR_RL,PARK_ASSIST,EPS
+ SG_ LaneLeftOffset_Raw : 49|16@1+ (0.01,0) [0|655.35] "m" LIDAR,EPS
+ SG_ LaneCurvature : 65|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIDAR,EPS
+ SG_ AliveCnt : 81|4@1+ (1,0) [0|15] "" EPS,RADAR_RL
+ SG_ Crc8 : 85|8@1+ (1,0) [0|255] "" EPS,RADAR_RL
+
+BO_ 335 CAM_F_Data2: 64 CAM_F
+ SG_ VehicleCount : 0|8@1+ (1,0) [0|255] "" PARK_ASSIST,LIDAR,GW_CENTRAL
+ SG_ LaneCurvature_Min : 8|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIDAR,GW_CENTRAL
+ SG_ LaneRightOffset_Raw : 24|16@1+ (0.01,0) [0|655.35] "m" LIDAR,RADAR_RR,GW_CENTRAL
+ SG_ CamTemp_Min : 40|8@1+ (1,-40) [-40|215] "degC" RADAR_RL,GW_CENTRAL
+ SG_ LaneConfidence_Min : 48|8@1+ (0.4,0) [0|102] "%" RADAR_RL,GW_CENTRAL
+ SG_ LaneCurvature_Raw : 56|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,PARK_ASSIST,RADAR_RR
+ SG_ LaneLeftOffset : 72|16@1+ (0.01,0) [0|655.35] "m" EPS,GW_CENTRAL
+ SG_ AliveCnt : 88|4@1+ (1,0) [0|15] "" GW_CENTRAL,LIDAR,RADAR_RL,RADAR_RR
+ SG_ Crc8 : 92|8@1+ (1,0) [0|255] "" GW_CENTRAL,LIDAR,RADAR_RL,RADAR_RR
+
+BO_ 337 CAM_F_Cmd3: 64 CAM_F
+ SG_ LaneLeftOffset_Avg : 0|16@1+ (0.01,0) [0|655.35] "m" ADAS_DOM,RADAR_RR
+ SG_ CamTemp_Avg : 16|8@1+ (1,-40) [-40|215] "degC" PARK_ASSIST,RADAR_F,ADAS_DOM
+ SG_ LaneConfidence_Raw : 24|8@1+ (0.4,0) [0|102] "%" PARK_ASSIST,ADAS_DOM
+ SG_ LaneCurvature_Max : 32|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RR,LIDAR,ADAS_DOM
+ SG_ LaneCurvature_Avg : 48|16@1+ (0.1,-1000) [-1000|5553.5] "deg" PARK_ASSIST,ADAS_DOM
+ SG_ LaneLeftOffset_Min : 64|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL,ADAS_DOM,RADAR_F
+ SG_ LaneRightOffset_Min : 80|16@1+ (0.01,0) [0|655.35] "m" RADAR_RR,EPS,ADAS_DOM
+ SG_ SignClass : 96|4@1+ (1,0) [0|15] "" RADAR_RL,ADAS_DOM
+ SG_ AliveCnt : 100|4@1+ (1,0) [0|15] "" ADAS_DOM,LIDAR
+ SG_ Crc8 : 104|8@1+ (1,0) [0|255] "" ADAS_DOM,LIDAR
+
+BO_ 345 CAM_F_Info4: 64 CAM_F
+ SG_ LaneRightOffset_Avg : 0|16@1+ (0.01,0) [0|655.35] "m" EPS,ADAS_DOM,GW_CENTRAL
+ SG_ LaneRightOffset_Max : 16|16@1+ (0.01,0) [0|655.35] "m" EPS,LIDAR,GW_CENTRAL
+ SG_ PedestrianDetected : 32|1@1+ (1,0) [0|1] "" RADAR_RR,LIDAR,GW_CENTRAL
+ SG_ LaneRightOffset : 33|16@1+ (0.01,0) [0|655.35] "m" RADAR_F,RADAR_RL,PARK_ASSIST,GW_CENTRAL
+ SG_ CamTemp : 49|8@1+ (1,-40) [-40|215] "degC" RADAR_RL,EPS,RADAR_F,GW_CENTRAL
+ SG_ CamTemp_Max : 57|8@1+ (1,-40) [-40|215] "degC" RADAR_F,EPS,GW_CENTRAL
+ SG_ CamTemp_Raw : 65|8@1+ (1,-40) [-40|215] "degC" EPS,RADAR_F,GW_CENTRAL
+ SG_ ExposureLevel_Min : 73|8@1+ (0.4,0) [0|102] "%" LIDAR,GW_CENTRAL
+ SG_ AliveCnt : 81|4@1+ (1,0) [0|15] "" GW_CENTRAL,PARK_ASSIST,EPS,ADAS_DOM
+ SG_ Crc8 : 85|8@1+ (1,0) [0|255] "" GW_CENTRAL,PARK_ASSIST,EPS,ADAS_DOM
+
+BO_ 347 LIDAR_Status1: 64 LIDAR
+ SG_ LidarTemp_Min : 0|8@1+ (1,-40) [-40|215] "degC" EPS,CAM_F,GW_CENTRAL
+ SG_ ScanRate_Min : 8|16@1+ (0.1,0) [0|6553.5] "Hz" RADAR_RR,GW_CENTRAL
+ SG_ LidarBlockage : 24|1@1+ (1,0) [0|1] "" ADAS_DOM,PARK_ASSIST,GW_CENTRAL
+ SG_ FreeSpaceLeft_Max : 25|16@1+ (0.01,0) [0|655.35] "m" RADAR_RL,ADAS_DOM,GW_CENTRAL
+ SG_ FreeSpaceRight_Max : 41|16@1+ (0.01,0) [0|655.35] "m" EPS,RADAR_F,GW_CENTRAL
+ SG_ LidarMotorSpeed_Max : 57|16@1+ (0.25,0) [0|16383.8] "rpm" RADAR_F,GW_CENTRAL
+ SG_ FreeSpaceFront_Avg : 73|16@1+ (0.01,0) [0|655.35] "m" PARK_ASSIST,EPS,GW_CENTRAL
+ SG_ FreeSpaceRight : 89|16@1+ (0.01,0) [0|655.35] "m" CAM_F,RADAR_F,GW_CENTRAL
+ SG_ LidarTemp_Raw : 105|8@1+ (1,-40) [-40|215] "degC" EPS,RADAR_F,GW_CENTRAL
+ SG_ FreeSpaceLeft : 113|16@1+ (0.01,0) [0|655.35] "m" CAM_F,PARK_ASSIST,GW_CENTRAL
+ SG_ AliveCnt : 129|4@1+ (1,0) [0|15] "" GW_CENTRAL,PARK_ASSIST,RADAR_F,ADAS_DOM
+ SG_ Crc8 : 133|8@1+ (1,0) [0|255] "" GW_CENTRAL,PARK_ASSIST,RADAR_F,ADAS_DOM
+
+BO_ 352 LIDAR_Data2: 64 LIDAR
+ SG_ FreeSpaceLeft_Raw : 0|16@1+ (0.01,0) [0|655.35] "m" ADAS_DOM,GW_CENTRAL,RADAR_F
+ SG_ PointCount : 16|8@1+ (1,0) [0|255] "" PARK_ASSIST,GW_CENTRAL
+ SG_ LidarMotorSpeed_Avg : 24|16@1+ (0.25,0) [0|16383.8] "rpm" ADAS_DOM,GW_CENTRAL
+ SG_ ScanRate_Raw : 40|16@1+ (0.1,0) [0|6553.5] "Hz" EPS,GW_CENTRAL
+ SG_ ScanRate_Max : 56|16@1+ (0.1,0) [0|6553.5] "Hz" RADAR_RR,PARK_ASSIST,GW_CENTRAL
+ SG_ LidarMotorSpeed : 72|16@1+ (0.25,0) [0|16383.8] "rpm" ADAS_DOM,EPS,GW_CENTRAL
+ SG_ AliveCnt : 88|4@1+ (1,0) [0|15] "" GW_CENTRAL,RADAR_RL,CAM_F,RADAR_F
+ SG_ Crc8 : 92|8@1+ (1,0) [0|255] "" GW_CENTRAL,RADAR_RL,CAM_F,RADAR_F
+
+BO_ 355 LIDAR_Cmd3: 64 LIDAR
+ SG_ LidarMotorSpeed_Min : 0|16@1+ (0.25,0) [0|16383.8] "rpm" RADAR_RR,RADAR_RL
+ SG_ FreeSpaceRight_Raw : 16|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL,CAM_F,RADAR_RL
+ SG_ FreeSpaceFront : 32|16@1+ (0.01,0) [0|655.35] "m" PARK_ASSIST,RADAR_F,RADAR_RR,RADAR_RL
+ SG_ LidarTemp : 48|8@1+ (1,-40) [-40|215] "degC" CAM_F,RADAR_RL
+ SG_ FreeSpaceFront_Min : 56|16@1+ (0.01,0) [0|655.35] "m" RADAR_RR,GW_CENTRAL,RADAR_RL
+ SG_ FreeSpaceLeft_Avg : 72|16@1+ (0.01,0) [0|655.35] "m" CAM_F,RADAR_RL
+ SG_ FreeSpaceRight_Min : 88|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL,RADAR_RL
+ SG_ LidarTemp_Max : 104|8@1+ (1,-40) [-40|215] "degC" EPS,GW_CENTRAL,RADAR_RL
+ SG_ AliveCnt : 112|4@1+ (1,0) [0|15] "" RADAR_RL,EPS
+ SG_ Crc8 : 116|8@1+ (1,0) [0|255] "" RADAR_RL,EPS
+
+BO_ 363 LIDAR_Info4: 64 LIDAR
+ SG_ FreeSpaceRight_Avg : 0|16@1+ (0.01,0) [0|655.35] "m" RADAR_RL,RADAR_RR
+ SG_ LidarMotorSpeed_Raw : 16|16@1+ (0.25,0) [0|16383.8] "rpm" PARK_ASSIST,CAM_F,RADAR_RR
+ SG_ FreeSpaceLeft_Min : 32|16@1+ (0.01,0) [0|655.35] "m" EPS,ADAS_DOM,RADAR_RR
+ SG_ ScanRate_Avg : 48|16@1+ (0.1,0) [0|6553.5] "Hz" RADAR_RR,ADAS_DOM
+ SG_ FreeSpaceFront_Raw : 64|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL,RADAR_RR,RADAR_F
+ SG_ FreeSpaceFront_Max : 80|16@1+ (0.01,0) [0|655.35] "m" RADAR_RR
+ SG_ LidarTemp_Avg : 96|8@1+ (1,-40) [-40|215] "degC" PARK_ASSIST,RADAR_RR
+ SG_ ScanRate : 104|16@1+ (0.1,0) [0|6553.5] "Hz" GW_CENTRAL,EPS,RADAR_F,RADAR_RR
+ SG_ AliveCnt : 120|4@1+ (1,0) [0|15] "" RADAR_RR,EPS,RADAR_RL
+ SG_ Crc8 : 124|8@1+ (1,0) [0|255] "" RADAR_RR,EPS,RADAR_RL
+
+BO_ 366 PARK_ASSIST_Status1: 64 PARK_ASSIST
+ SG_ SteerReq_Avg : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_F,RADAR_RL,EPS
+ SG_ Ultrasonic3 : 16|16@1+ (0.01,0) [0|655.35] "m" RADAR_RL,LIDAR,EPS
+ SG_ Ultrasonic5 : 32|16@1+ (0.01,0) [0|655.35] "m" EPS,GW_CENTRAL
+ SG_ Ultrasonic8_Raw : 48|16@1+ (0.01,0) [0|655.35] "m" RADAR_RR,RADAR_F,CAM_F,EPS
+ SG_ ParkSpeedLimit_Max : 64|16@1+ (0.01,0) [0|655.35] "km/h" EPS
+ SG_ Ultrasonic4_Max : 80|16@1+ (0.01,0) [0|655.35] "m" LIDAR,RADAR_F,EPS
+ SG_ Ultrasonic3_Raw : 96|16@1+ (0.01,0) [0|655.35] "m" EPS,RADAR_RL,LIDAR
+ SG_ ParkSpeedLimit : 112|16@1+ (0.01,0) [0|655.35] "km/h" ADAS_DOM,EPS
+ SG_ AliveCnt : 128|4@1+ (1,0) [0|15] "" EPS
+ SG_ Crc8 : 132|8@1+ (1,0) [0|255] "" EPS
+
+BO_ 372 PARK_ASSIST_Data2: 64 PARK_ASSIST
+ SG_ Ultrasonic1_Max : 0|16@1+ (0.01,0) [0|655.35] "m" LIDAR,RADAR_RL,RADAR_F
+ SG_ Ultrasonic2_Raw : 16|16@1+ (0.01,0) [0|655.35] "m" RADAR_RR,CAM_F,RADAR_F
+ SG_ Ultrasonic7_Max : 32|16@1+ (0.01,0) [0|655.35] "m" CAM_F,GW_CENTRAL,RADAR_F
+ SG_ ParkSpeedLimit_Avg : 48|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_RR,RADAR_RL,ADAS_DOM,RADAR_F
+ SG_ Ultrasonic6_Raw : 64|16@1+ (0.01,0) [0|655.35] "m" RADAR_RR,RADAR_F
+ SG_ SteerReq : 80|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RR,LIDAR,RADAR_RL,RADAR_F
+ SG_ SteerReq_Min : 96|16@1+ (0.1,-1000) [-1000|5553.5] "deg" ADAS_DOM,RADAR_RR,RADAR_F
+ SG_ Ultrasonic8_Avg : 112|16@1+ (0.01,0) [0|655.35] "m" ADAS_DOM,RADAR_RL,LIDAR,RADAR_F
+ SG_ AliveCnt : 128|4@1+ (1,0) [0|15] "" RADAR_F,LIDAR
+ SG_ Crc8 : 132|8@1+ (1,0) [0|255] "" RADAR_F,LIDAR
+
+BO_ 376 PARK_ASSIST_Cmd3: 64 PARK_ASSIST
+ SG_ Ultrasonic6 : 0|16@1+ (0.01,0) [0|655.35] "m" RADAR_F,GW_CENTRAL,CAM_F
+ SG_ ParkSpeedLimit_Raw : 16|16@1+ (0.01,0) [0|655.35] "km/h" EPS,RADAR_F,ADAS_DOM,GW_CENTRAL
+ SG_ Ultrasonic2_Max : 32|16@1+ (0.01,0) [0|655.35] "m" GW_CENTRAL,RADAR_RL
+ SG_ Ultrasonic6_Max : 48|16@1+ (0.01,0) [0|655.35] "m" ADAS_DOM,LIDAR,GW_CENTRAL
+ SG_ Ultrasonic6_Min : 64|16@1+ (0.01,0) [0|655.35] "m" EPS,RADAR_RR,RADAR_F,GW_CENTRAL
+ SG_ AutoParkActive : 80|1@1+ (1,0) [0|1] "" ADAS_DOM,GW_CENTRAL
+ SG_ Ultrasonic7_Avg : 81|16@1+ (0.01,0) [0|655.35] "m" LIDAR,GW_CENTRAL
+ SG_ AliveCnt : 97|4@1+ (1,0) [0|15] "" GW_CENTRAL,RADAR_RL,RADAR_RR
+ SG_ Crc8 : 101|8@1+ (1,0) [0|255] "" GW_CENTRAL,RADAR_RL,RADAR_RR
+
+BO_ 379 PARK_ASSIST_Info4: 64 PARK_ASSIST
+ SG_ Ultrasonic7_Raw : 0|16@1+ (0.01,0) [0|655.35] "m" EPS,LIDAR,GW_CENTRAL
+ SG_ Ultrasonic2 : 16|16@1+ (0.01,0) [0|655.35] "m" RADAR_F,ADAS_DOM,LIDAR,GW_CENTRAL
+ SG_ Ultrasonic5_Min : 32|16@1+ (0.01,0) [0|655.35] "m" LIDAR,RADAR_F,GW_CENTRAL
+ SG_ SteerReq_Raw : 48|16@1+ (0.1,-1000) [-1000|5553.5] "deg" EPS,RADAR_F,RADAR_RR,GW_CENTRAL
+ SG_ Ultrasonic6_Avg : 64|16@1+ (0.01,0) [0|655.35] "m" RADAR_RR,GW_CENTRAL
+ SG_ Ultrasonic1_Raw : 80|16@1+ (0.01,0) [0|655.35] "m" LIDAR,GW_CENTRAL,EPS
+ SG_ ParkSpeedLimit_Min : 96|16@1+ (0.01,0) [0|655.35] "km/h" RADAR_RR,EPS,GW_CENTRAL
+ SG_ AliveCnt : 112|4@1+ (1,0) [0|15] "" GW_CENTRAL,RADAR_F,RADAR_RR,EPS
+ SG_ Crc8 : 116|8@1+ (1,0) [0|255] "" GW_CENTRAL,RADAR_F,RADAR_RR,EPS
+
+BO_ 384 PARK_ASSIST_Limits5: 64 PARK_ASSIST
+ SG_ Ultrasonic5_Max : 0|16@1+ (0.01,0) [0|655.35] "m" RADAR_RL,GW_CENTRAL
+ SG_ Ultrasonic4_Raw : 16|16@1+ (0.01,0) [0|655.35] "m" RADAR_F,RADAR_RR,LIDAR,GW_CENTRAL
+ SG_ Ultrasonic1_Avg : 32|16@1+ (0.01,0) [0|655.35] "m" ADAS_DOM,EPS,LIDAR,GW_CENTRAL
+ SG_ Ultrasonic3_Avg : 48|16@1+ (0.01,0) [0|655.35] "m" LIDAR,RADAR_RR,GW_CENTRAL
+ SG_ Ultrasonic4_Avg : 64|16@1+ (0.01,0) [0|655.35] "m" EPS,GW_CENTRAL
+ SG_ Ultrasonic5_Avg : 80|16@1+ (0.01,0) [0|655.35] "m" EPS,GW_CENTRAL
+ SG_ Ultrasonic8_Min : 96|16@1+ (0.01,0) [0|655.35] "m" CAM_F,GW_CENTRAL
+ SG_ AliveCnt : 112|4@1+ (1,0) [0|15] "" GW_CENTRAL,ADAS_DOM,EPS,CAM_F
+ SG_ Crc8 : 116|8@1+ (1,0) [0|255] "" GW_CENTRAL,ADAS_DOM,EPS,CAM_F
+
+BO_ 389 EPS_Status1: 64 EPS
+ SG_ SteerTorque_Min : 0|16@1+ (0.5,-500) [-500|32267.5] "Nm" PARK_ASSIST,GW_CENTRAL,ADAS_DOM
+ SG_ MotorTemp_Max : 16|8@1+ (1,-40) [-40|215] "degC" PARK_ASSIST,ADAS_DOM
+ SG_ SteerTorque_Avg : 24|16@1+ (0.5,-500) [-500|32267.5] "Nm" ADAS_DOM,GW_CENTRAL
+ SG_ SteerAngleReq_Min : 40|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RL,GW_CENTRAL,ADAS_DOM
+ SG_ MotorTemp_Raw : 56|8@1+ (1,-40) [-40|215] "degC" RADAR_RR,CAM_F,LIDAR,ADAS_DOM
+ SG_ LKAActive : 64|1@1+ (1,0) [0|1] "" RADAR_RL,ADAS_DOM
+ SG_ AssistLevel : 65|8@1+ (0.4,0) [0|102] "%" LIDAR,ADAS_DOM
+ SG_ AliveCnt : 73|4@1+ (1,0) [0|15] "" ADAS_DOM,RADAR_RR
+ SG_ Crc8 : 77|8@1+ (1,0) [0|255] "" ADAS_DOM,RADAR_RR
+
+BO_ 392 EPS_Data2: 64 EPS
+ SG_ AssistLevel_Avg : 0|8@1+ (0.4,0) [0|102] "%" CAM_F,RADAR_RL,GW_CENTRAL
+ SG_ SteerAngleReq_Avg : 8|16@1+ (0.1,-1000) [-1000|5553.5] "deg" ADAS_DOM,GW_CENTRAL
+ SG_ SteerAngleAct_Avg : 24|16@1+ (0.1,-1000) [-1000|5553.5] "deg" PARK_ASSIST,LIDAR,GW_CENTRAL
+ SG_ MotorCurrent_Min : 40|16@1+ (0.1,-1000) [-1000|5553.5] "A" RADAR_RL,RADAR_RR,GW_CENTRAL
+ SG_ SteerTorque_Raw : 56|16@1+ (0.5,-500) [-500|32267.5] "Nm" GW_CENTRAL,RADAR_RL
+ SG_ AssistLevel_Min : 72|8@1+ (0.4,0) [0|102] "%" RADAR_RL,GW_CENTRAL
+ SG_ AliveCnt : 80|4@1+ (1,0) [0|15] "" GW_CENTRAL,ADAS_DOM,RADAR_F,PARK_ASSIST
+ SG_ Crc8 : 84|8@1+ (1,0) [0|255] "" GW_CENTRAL,ADAS_DOM,RADAR_F,PARK_ASSIST
+
+BO_ 397 EPS_Cmd3: 64 EPS
+ SG_ SteerAngleReq_Max : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_F,GW_CENTRAL
+ SG_ AssistLevel_Max : 16|8@1+ (0.4,0) [0|102] "%" ADAS_DOM,PARK_ASSIST,GW_CENTRAL
+ SG_ SteerAngleReq_Raw : 24|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RL,GW_CENTRAL
+ SG_ SteerFault : 40|1@1+ (1,0) [0|1] "" PARK_ASSIST,RADAR_F,GW_CENTRAL
+ SG_ ColumnTorque_Max : 41|16@1+ (0.5,-500) [-500|32267.5] "Nm" CAM_F,RADAR_F,LIDAR,GW_CENTRAL
+ SG_ AssistLevel_Raw : 57|8@1+ (0.4,0) [0|102] "%" RADAR_F,GW_CENTRAL
+ SG_ SteerTorque_Max : 65|16@1+ (0.5,-500) [-500|32267.5] "Nm" RADAR_F,ADAS_DOM,GW_CENTRAL
+ SG_ ColumnTorque : 81|16@1+ (0.5,-500) [-500|32267.5] "Nm" RADAR_RR,GW_CENTRAL
+ SG_ AliveCnt : 97|4@1+ (1,0) [0|15] "" GW_CENTRAL,RADAR_RR
+ SG_ Crc8 : 101|8@1+ (1,0) [0|255] "" GW_CENTRAL,RADAR_RR
+
+BO_ 405 EPS_Info4: 64 EPS
+ SG_ MotorCurrent_Raw : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" RADAR_RL,ADAS_DOM
+ SG_ SteerAngleReq : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIDAR,ADAS_DOM
+ SG_ MotorCurrent_Max : 32|16@1+ (0.1,-1000) [-1000|5553.5] "A" GW_CENTRAL,CAM_F,ADAS_DOM
+ SG_ SteerAngleAct_Min : 48|16@1+ (0.1,-1000) [-1000|5553.5] "deg" RADAR_RR,ADAS_DOM
+ SG_ MotorTemp : 64|8@1+ (1,-40) [-40|215] "degC" CAM_F,RADAR_RL,RADAR_RR,ADAS_DOM
+ SG_ ColumnTorque_Min : 72|16@1+ (0.5,-500) [-500|32267.5] "Nm" LIDAR,RADAR_RR,CAM_F,ADAS_DOM
+ SG_ EPSState : 88|4@1+ (1,0) [0|15] "" RADAR_F,GW_CENTRAL,RADAR_RR,ADAS_DOM
+ SG_ SteerAngleAct : 92|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,RADAR_RL,LIDAR,ADAS_DOM
+ SG_ AliveCnt : 108|4@1+ (1,0) [0|15] "" ADAS_DOM,RADAR_RR,CAM_F
+ SG_ Crc8 : 112|8@1+ (1,0) [0|255] "" ADAS_DOM,RADAR_RR,CAM_F
+
+BO_ 412 GW_CENTRAL_Status1: 64 GW_CENTRAL
+ SG_ GatewayTemp_Max : 0|8@1+ (1,-40) [-40|215] "degC" CAM_F,LIDAR,RADAR_RL
+ SG_ TimeSync_Avg : 8|16@1+ (0.1,0) [0|6553.5] "s" PARK_ASSIST,RADAR_RL
+ SG_ BusLoad_Max : 24|8@1+ (0.4,0) [0|102] "%" RADAR_RR,EPS,PARK_ASSIST,RADAR_RL
+ SG_ BusLoad_Min : 32|8@1+ (0.4,0) [0|102] "%" LIDAR,CAM_F,PARK_ASSIST,RADAR_RL
+ SG_ GatewayTemp : 40|8@1+ (1,-40) [-40|215] "degC" RADAR_RR,RADAR_RL
+ SG_ OTAActive : 48|1@1+ (1,0) [0|1] "" LIDAR,RADAR_RL
+ SG_ VoltageSupply_Max : 49|16@1+ (0.01,0) [0|655.35] "V" PARK_ASSIST,RADAR_RL
+ SG_ VoltageSupply_Raw : 65|16@1+ (0.01,0) [0|655.35] "V" RADAR_RL,PARK_ASSIST
+ SG_ AliveCnt : 81|4@1+ (1,0) [0|15] "" RADAR_RL
+ SG_ Crc8 : 85|8@1+ (1,0) [0|255] "" RADAR_RL
+
+BO_ 413 GW_CENTRAL_Data2: 64 GW_CENTRAL
+ SG_ TimeSync_Raw : 0|16@1+ (0.1,0) [0|6553.5] "s" RADAR_F,ADAS_DOM
+ SG_ RoutedFrameCount : 16|8@1+ (1,0) [0|255] "" CAM_F,ADAS_DOM
+ SG_ VoltageSupply_Avg : 24|16@1+ (0.01,0) [0|655.35] "V" LIDAR,EPS,ADAS_DOM
+ SG_ VoltageSupply_Min : 40|16@1+ (0.01,0) [0|655.35] "V" CAM_F,ADAS_DOM
+ SG_ GatewayTemp_Min : 56|8@1+ (1,-40) [-40|215] "degC" ADAS_DOM,CAM_F
+ SG_ VoltageSupply : 64|16@1+ (0.01,0) [0|655.35] "V" EPS,ADAS_DOM,LIDAR
+ SG_ GatewayTemp_Raw : 80|8@1+ (1,-40) [-40|215] "degC" CAM_F,RADAR_RL,ADAS_DOM
+ SG_ BusLoad_Raw : 88|8@1+ (0.4,0) [0|102] "%" PARK_ASSIST,RADAR_RL,RADAR_RR,ADAS_DOM
+ SG_ BusLoad : 96|8@1+ (0.4,0) [0|102] "%" RADAR_F,CAM_F,ADAS_DOM
+ SG_ ErrorCounter : 104|8@1+ (1,0) [0|255] "" ADAS_DOM,LIDAR,EPS
+ SG_ AliveCnt : 112|4@1+ (1,0) [0|15] "" ADAS_DOM
+ SG_ Crc8 : 116|8@1+ (1,0) [0|255] "" ADAS_DOM
+
+BO_ 415 GW_CENTRAL_Cmd3: 64 GW_CENTRAL
+ SG_ TimeSync : 0|16@1+ (0.1,0) [0|6553.5] "s" RADAR_RR,RADAR_F
+ SG_ SleepRequest : 16|1@1+ (1,0) [0|1] "" RADAR_RR,RADAR_F
+ SG_ BusLoad_Avg : 17|8@1+ (0.4,0) [0|102] "%" CAM_F,RADAR_F
+ SG_ GatewayTemp_Avg : 25|8@1+ (1,-40) [-40|215] "degC" EPS,LIDAR,RADAR_F
+ SG_ DiagSessionActive : 33|1@1+ (1,0) [0|1] "" RADAR_RR,LIDAR,EPS,RADAR_F
+ SG_ TimeSync_Max : 34|16@1+ (0.1,0) [0|6553.5] "s" ADAS_DOM,RADAR_F
+ SG_ AliveCnt : 50|4@1+ (1,0) [0|15] "" RADAR_F
+ SG_ Crc8 : 54|8@1+ (1,0) [0|255] "" RADAR_F
+
+BO_ 420 GW_CENTRAL_Info4: 64 GW_CENTRAL
+ SG_ WakeSource : 0|4@1+ (1,0) [0|15] "" RADAR_RL,LIDAR,EPS
+ SG_ GatewayState : 4|4@1+ (1,0) [0|15] "" PARK_ASSIST,RADAR_RR,LIDAR,EPS
+ SG_ TimeSync_Min : 8|16@1+ (0.1,0) [0|6553.5] "s" RADAR_RR,EPS
+ SG_ NetworkMgmtState : 24|4@1+ (1,0) [0|15] "" CAM_F,EPS
+ SG_ AliveCnt : 28|4@1+ (1,0) [0|15] "" EPS,RADAR_F,LIDAR
+ SG_ Crc8 : 32|8@1+ (1,0) [0|255] "" EPS,RADAR_F,LIDAR
+
+BA_ "BusType" "CAN FD";

@@ -1,0 +1,5 @@
+{
+ "ecu_leader": 0.2,
+ "particle_size": 0.01,
+ "orbit_damping": 1.5
+}

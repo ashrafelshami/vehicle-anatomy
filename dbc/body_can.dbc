@@ -1,0 +1,337 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: BCM DOOR_FL DOOR_FR DOOR_RL DOOR_RR SEAT_DRV HVAC LIGHT_F LIGHT_R GW_CENTRAL
+
+BO_ 264 BCM_Status1: 8 BCM
+ SG_ RainSensor_Max : 0|8@1+ (0.4,0) [0|102] "%" SEAT_DRV,HVAC,LIGHT_R
+ SG_ WiperSpeed : 8|4@1+ (1,0) [0|15] "" GW_CENTRAL,SEAT_DRV,DOOR_FL,LIGHT_R
+ SG_ KeyFobBattery_Raw : 12|8@1+ (0.4,0) [0|102] "%" LIGHT_F,GW_CENTRAL,LIGHT_R
+ SG_ RainSensor_Raw : 20|8@1+ (0.4,0) [0|102] "%" DOOR_FR,LIGHT_R
+ SG_ KeyFobBattery_Min : 28|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,DOOR_FL,LIGHT_R
+ SG_ BatteryVoltage_Raw : 36|16@1+ (0.01,0) [0|655.35] "V" HVAC,DOOR_FL,LIGHT_R
+ SG_ AliveCnt : 52|4@1+ (1,0) [0|15] "" LIGHT_R
+ SG_ Crc8 : 56|8@1+ (1,0) [0|255] "" LIGHT_R
+
+BO_ 270 BCM_Data2: 8 BCM
+ SG_ LightSensor_Avg : 0|8@1+ (0.4,0) [0|102] "%" HVAC,DOOR_FL,DOOR_FR
+ SG_ RainSensor_Avg : 8|8@1+ (0.4,0) [0|102] "%" HVAC,DOOR_RR,DOOR_FR
+ SG_ LightSensor_Min : 16|8@1+ (0.4,0) [0|102] "%" DOOR_RL,DOOR_FR,DOOR_RR
+ SG_ LightSensor_Raw : 24|8@1+ (0.4,0) [0|102] "%" LIGHT_F,HVAC,DOOR_RL,DOOR_FR
+ SG_ BatteryVoltage : 32|16@1+ (0.01,0) [0|655.35] "V" HVAC,DOOR_FL,GW_CENTRAL,DOOR_FR
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" DOOR_FR,LIGHT_F
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" DOOR_FR,LIGHT_F
+
+BO_ 274 BCM_Cmd3: 8 BCM
+ SG_ RainSensor : 0|8@1+ (0.4,0) [0|102] "%" DOOR_FR,GW_CENTRAL,HVAC,LIGHT_F
+ SG_ InteriorLight : 8|8@1+ (0.4,0) [0|102] "%" LIGHT_F,DOOR_FR
+ SG_ KeyFobBattery_Max : 16|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,SEAT_DRV,LIGHT_F
+ SG_ IgnitionState : 24|4@1+ (1,0) [0|15] "" DOOR_FR,LIGHT_F
+ SG_ BatteryVoltage_Min : 28|16@1+ (0.01,0) [0|655.35] "V" LIGHT_R,DOOR_FL,HVAC,LIGHT_F
+ SG_ InteriorLight_Max : 44|8@1+ (0.4,0) [0|102] "%" DOOR_RR,DOOR_FR,LIGHT_F
+ SG_ AliveCnt : 52|4@1+ (1,0) [0|15] "" LIGHT_F,SEAT_DRV
+ SG_ Crc8 : 56|8@1+ (1,0) [0|255] "" LIGHT_F,SEAT_DRV
+
+BO_ 280 BCM_Info4: 8 BCM
+ SG_ TurnSignalL : 0|1@1+ (1,0) [0|1] "" DOOR_FL,GW_CENTRAL
+ SG_ TurnSignalR : 1|1@1+ (1,0) [0|1] "" DOOR_RL,DOOR_FL,GW_CENTRAL
+ SG_ LightSensor_Max : 2|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,LIGHT_F,DOOR_FR
+ SG_ BatteryVoltage_Max : 10|16@1+ (0.01,0) [0|655.35] "V" DOOR_FR,GW_CENTRAL
+ SG_ DoorLockCmd : 26|1@1+ (1,0) [0|1] "" GW_CENTRAL
+ SG_ InteriorLight_Min : 27|8@1+ (0.4,0) [0|102] "%" SEAT_DRV,LIGHT_R,DOOR_FR,GW_CENTRAL
+ SG_ AliveCnt : 35|4@1+ (1,0) [0|15] "" GW_CENTRAL,DOOR_RL,DOOR_FL
+ SG_ Crc8 : 39|8@1+ (1,0) [0|255] "" GW_CENTRAL,DOOR_RL,DOOR_FL
+
+BO_ 288 DOOR_FL_Status1: 8 DOOR_FL
+ SG_ WindowPos_Raw : 0|8@1+ (0.4,0) [0|102] "%" DOOR_RL,LIGHT_F
+ SG_ MirrorPosV_Avg : 8|16@1+ (0.1,-1000) [-1000|5553.5] "deg" SEAT_DRV,LIGHT_F,GW_CENTRAL
+ SG_ MirrorHeat : 24|1@1+ (1,0) [0|1] "" BCM,LIGHT_R,LIGHT_F
+ SG_ MirrorPosH_Raw : 25|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIGHT_F
+ SG_ AliveCnt : 41|4@1+ (1,0) [0|15] "" LIGHT_F,HVAC
+ SG_ Crc8 : 45|8@1+ (1,0) [0|255] "" LIGHT_F,HVAC
+
+BO_ 294 DOOR_FL_Data2: 8 DOOR_FL
+ SG_ WindowMotorCurrent_Min : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" GW_CENTRAL,LIGHT_R
+ SG_ LatchState : 16|4@1+ (1,0) [0|15] "" LIGHT_R,GW_CENTRAL,DOOR_FR
+ SG_ MirrorPosV_Raw : 20|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,SEAT_DRV,LIGHT_R
+ SG_ WindowPos : 36|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,SEAT_DRV,DOOR_RL
+ SG_ AliveCnt : 44|4@1+ (1,0) [0|15] "" GW_CENTRAL,LIGHT_F,DOOR_FR,HVAC
+ SG_ Crc8 : 48|8@1+ (1,0) [0|255] "" GW_CENTRAL,LIGHT_F,DOOR_FR,HVAC
+
+BO_ 295 DOOR_FL_Cmd3: 8 DOOR_FL
+ SG_ MirrorPosH : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" DOOR_RR,LIGHT_R
+ SG_ MirrorPosH_Avg : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIGHT_R,HVAC,GW_CENTRAL
+ SG_ WindowPos_Max : 32|8@1+ (0.4,0) [0|102] "%" LIGHT_F,LIGHT_R
+ SG_ MirrorFoldCmd : 40|1@1+ (1,0) [0|1] "" DOOR_FR,LIGHT_R
+ SG_ AliveCnt : 41|4@1+ (1,0) [0|15] "" LIGHT_R
+ SG_ Crc8 : 45|8@1+ (1,0) [0|255] "" LIGHT_R
+
+BO_ 301 DOOR_FR_Status1: 8 DOOR_FR
+ SG_ WindowPos_Raw : 0|8@1+ (0.4,0) [0|102] "%" DOOR_RR,GW_CENTRAL
+ SG_ MirrorPosH : 8|16@1+ (0.1,-1000) [-1000|5553.5] "deg" BCM,GW_CENTRAL
+ SG_ MirrorPosV_Max : 24|16@1+ (0.1,-1000) [-1000|5553.5] "deg" DOOR_RR,GW_CENTRAL
+ SG_ AliveCnt : 40|4@1+ (1,0) [0|15] "" GW_CENTRAL,LIGHT_F,SEAT_DRV
+ SG_ Crc8 : 44|8@1+ (1,0) [0|255] "" GW_CENTRAL,LIGHT_F,SEAT_DRV
+
+BO_ 308 DOOR_FR_Data2: 8 DOOR_FR
+ SG_ MirrorPosH_Avg : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" HVAC,BCM,GW_CENTRAL
+ SG_ WindowPinch : 16|1@1+ (1,0) [0|1] "" SEAT_DRV,LIGHT_R,DOOR_RR,GW_CENTRAL
+ SG_ WindowMotorCurrent : 17|16@1+ (0.1,-1000) [-1000|5553.5] "A" DOOR_RL,BCM,GW_CENTRAL
+ SG_ MirrorPosH_Max : 33|16@1+ (0.1,-1000) [-1000|5553.5] "deg" HVAC,LIGHT_R,DOOR_RL,GW_CENTRAL
+ SG_ AliveCnt : 49|4@1+ (1,0) [0|15] "" GW_CENTRAL,DOOR_RL,HVAC,LIGHT_R
+ SG_ Crc8 : 53|8@1+ (1,0) [0|255] "" GW_CENTRAL,DOOR_RL,HVAC,LIGHT_R
+
+BO_ 310 DOOR_FR_Cmd3: 8 DOOR_FR
+ SG_ WindowPos_Min : 0|8@1+ (0.4,0) [0|102] "%" DOOR_FL,LIGHT_R,SEAT_DRV
+ SG_ WindowPos : 8|8@1+ (0.4,0) [0|102] "%" DOOR_RR,SEAT_DRV,GW_CENTRAL
+ SG_ DoorHandleTouch : 16|1@1+ (1,0) [0|1] "" BCM,SEAT_DRV
+ SG_ MirrorPosV_Min : 17|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,DOOR_RL,DOOR_FL,SEAT_DRV
+ SG_ WindowPos_Avg : 33|8@1+ (0.4,0) [0|102] "%" DOOR_FL,SEAT_DRV
+ SG_ AliveCnt : 41|4@1+ (1,0) [0|15] "" SEAT_DRV,DOOR_RR
+ SG_ Crc8 : 45|8@1+ (1,0) [0|255] "" SEAT_DRV,DOOR_RR
+
+BO_ 311 DOOR_FR_Info4: 8 DOOR_FR
+ SG_ MirrorPosH_Min : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" BCM
+ SG_ WindowMotorCurrent_Raw : 16|16@1+ (0.1,-1000) [-1000|5553.5] "A" HVAC,BCM
+ SG_ WindowPos_Max : 32|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,BCM
+ SG_ AliveCnt : 40|4@1+ (1,0) [0|15] "" BCM,LIGHT_R
+ SG_ Crc8 : 44|8@1+ (1,0) [0|255] "" BCM,LIGHT_R
+
+BO_ 319 DOOR_FR_Limits5: 8 DOOR_FR
+ SG_ MirrorPosV_Raw : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIGHT_F,GW_CENTRAL
+ SG_ MirrorPosV_Avg : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL
+ SG_ MirrorPosV : 32|16@1+ (0.1,-1000) [-1000|5553.5] "deg" BCM,HVAC,GW_CENTRAL
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" GW_CENTRAL,SEAT_DRV,DOOR_FL
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" GW_CENTRAL,SEAT_DRV,DOOR_FL
+
+BO_ 321 DOOR_RL_Status1: 8 DOOR_RL
+ SG_ LatchState : 0|4@1+ (1,0) [0|15] "" DOOR_RR,GW_CENTRAL
+ SG_ WindowPos_Min : 4|8@1+ (0.4,0) [0|102] "%" DOOR_FL,GW_CENTRAL,LIGHT_F
+ SG_ WindowMotorCurrent_Avg : 12|16@1+ (0.1,-1000) [-1000|5553.5] "A" SEAT_DRV,GW_CENTRAL
+ SG_ MirrorPosH_Min : 28|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,LIGHT_F
+ SG_ AliveCnt : 44|4@1+ (1,0) [0|15] "" GW_CENTRAL,DOOR_FR
+ SG_ Crc8 : 48|8@1+ (1,0) [0|255] "" GW_CENTRAL,DOOR_FR
+
+BO_ 322 DOOR_RL_Data2: 8 DOOR_RL
+ SG_ WindowMotorCurrent_Raw : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" LIGHT_R,LIGHT_F,HVAC
+ SG_ WindowPinch : 16|1@1+ (1,0) [0|1] "" DOOR_FL,LIGHT_F,HVAC
+ SG_ WindowMotorCurrent_Max : 17|16@1+ (0.1,-1000) [-1000|5553.5] "A" HVAC,DOOR_FR
+ SG_ MirrorPosH_Raw : 33|16@1+ (0.1,-1000) [-1000|5553.5] "deg" DOOR_FL,DOOR_RR,BCM,HVAC
+ SG_ CourtesyLight : 49|1@1+ (1,0) [0|1] "" GW_CENTRAL,SEAT_DRV,HVAC
+ SG_ AliveCnt : 50|4@1+ (1,0) [0|15] "" HVAC
+ SG_ Crc8 : 54|8@1+ (1,0) [0|255] "" HVAC
+
+BO_ 328 DOOR_RL_Cmd3: 8 DOOR_RL
+ SG_ MirrorPosV_Avg : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,BCM
+ SG_ MirrorPosV_Raw : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" SEAT_DRV,GW_CENTRAL
+ SG_ MirrorHeat : 32|1@1+ (1,0) [0|1] "" DOOR_FR,GW_CENTRAL
+ SG_ DoorLocked : 33|1@1+ (1,0) [0|1] "" DOOR_FR,GW_CENTRAL
+ SG_ MirrorFoldCmd : 34|1@1+ (1,0) [0|1] "" SEAT_DRV,GW_CENTRAL
+ SG_ MirrorPosH_Max : 35|16@1+ (0.1,-1000) [-1000|5553.5] "deg" HVAC,DOOR_FR,GW_CENTRAL
+ SG_ AliveCnt : 51|4@1+ (1,0) [0|15] "" GW_CENTRAL,HVAC,DOOR_FR
+ SG_ Crc8 : 55|8@1+ (1,0) [0|255] "" GW_CENTRAL,HVAC,DOOR_FR
+
+BO_ 336 DOOR_RL_Info4: 8 DOOR_RL
+ SG_ WindowMotorCurrent_Min : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" DOOR_FL,DOOR_FR,GW_CENTRAL
+ SG_ MirrorPosV_Max : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" DOOR_FL,DOOR_FR,GW_CENTRAL
+ SG_ WindowMotorCurrent : 32|16@1+ (0.1,-1000) [-1000|5553.5] "A" BCM,GW_CENTRAL,HVAC
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" GW_CENTRAL,DOOR_FR,SEAT_DRV
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" GW_CENTRAL,DOOR_FR,SEAT_DRV
+
+BO_ 342 DOOR_RL_Limits5: 8 DOOR_RL
+ SG_ WindowPos_Raw : 0|8@1+ (0.4,0) [0|102] "%" HVAC,GW_CENTRAL,LIGHT_R
+ SG_ DoorHandleTouch : 8|1@1+ (1,0) [0|1] "" LIGHT_F,HVAC
+ SG_ WindowPos : 9|8@1+ (0.4,0) [0|102] "%" DOOR_RR,BCM,HVAC
+ SG_ MirrorPosV_Min : 17|16@1+ (0.1,-1000) [-1000|5553.5] "deg" HVAC,LIGHT_F
+ SG_ MirrorPosH_Avg : 33|16@1+ (0.1,-1000) [-1000|5553.5] "deg" BCM,DOOR_RR,HVAC
+ SG_ AliveCnt : 49|4@1+ (1,0) [0|15] "" HVAC,LIGHT_F
+ SG_ Crc8 : 53|8@1+ (1,0) [0|255] "" HVAC,LIGHT_F
+
+BO_ 349 DOOR_RR_Status1: 8 DOOR_RR
+ SG_ WindowPos : 0|8@1+ (0.4,0) [0|102] "%" DOOR_RL
+ SG_ MirrorPosH_Max : 8|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIGHT_R,DOOR_RL
+ SG_ MirrorHeat : 24|1@1+ (1,0) [0|1] "" BCM,DOOR_RL
+ SG_ MirrorPosV_Max : 25|16@1+ (0.1,-1000) [-1000|5553.5] "deg" DOOR_RL
+ SG_ AliveCnt : 41|4@1+ (1,0) [0|15] "" DOOR_RL,DOOR_FL
+ SG_ Crc8 : 45|8@1+ (1,0) [0|255] "" DOOR_RL,DOOR_FL
+
+BO_ 353 DOOR_RR_Data2: 8 DOOR_RR
+ SG_ MirrorPosH : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" BCM,DOOR_RL,DOOR_FR,GW_CENTRAL
+ SG_ DoorHandleTouch : 16|1@1+ (1,0) [0|1] "" BCM,GW_CENTRAL,LIGHT_F
+ SG_ MirrorPosH_Min : 17|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,HVAC
+ SG_ WindowPinch : 33|1@1+ (1,0) [0|1] "" DOOR_FL,HVAC,GW_CENTRAL
+ SG_ MirrorFoldCmd : 34|1@1+ (1,0) [0|1] "" SEAT_DRV,HVAC,LIGHT_F,GW_CENTRAL
+ SG_ WindowMotorCurrent_Avg : 35|16@1+ (0.1,-1000) [-1000|5553.5] "A" LIGHT_R,GW_CENTRAL
+ SG_ AliveCnt : 51|4@1+ (1,0) [0|15] "" GW_CENTRAL,DOOR_RL,SEAT_DRV,DOOR_FR
+ SG_ Crc8 : 55|8@1+ (1,0) [0|255] "" GW_CENTRAL,DOOR_RL,SEAT_DRV,DOOR_FR
+
+BO_ 360 DOOR_RR_Cmd3: 8 DOOR_RR
+ SG_ MirrorPosV_Min : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" BCM,DOOR_FR,DOOR_FL
+ SG_ LatchState : 16|4@1+ (1,0) [0|15] "" HVAC,DOOR_FL
+ SG_ WindowMotorCurrent_Min : 20|16@1+ (0.1,-1000) [-1000|5553.5] "A" SEAT_DRV,LIGHT_R,DOOR_FL
+ SG_ MirrorPosH_Raw : 36|16@1+ (0.1,-1000) [-1000|5553.5] "deg" SEAT_DRV,DOOR_FL
+ SG_ AliveCnt : 52|4@1+ (1,0) [0|15] "" DOOR_FL,HVAC
+ SG_ Crc8 : 56|8@1+ (1,0) [0|255] "" DOOR_FL,HVAC
+
+BO_ 364 SEAT_DRV_Status1: 8 SEAT_DRV
+ SG_ SeatPosFwd_Raw : 0|16@1+ (0.01,0) [0|655.35] "m" LIGHT_R,GW_CENTRAL,HVAC
+ SG_ SeatPosFwd : 16|16@1+ (0.01,0) [0|655.35] "m" DOOR_FR,LIGHT_R,DOOR_RL,GW_CENTRAL
+ SG_ MemorySlot : 32|4@1+ (1,0) [0|15] "" GW_CENTRAL,LIGHT_R
+ SG_ LumbarPct_Min : 36|8@1+ (0.4,0) [0|102] "%" HVAC,BCM,LIGHT_F,GW_CENTRAL
+ SG_ AliveCnt : 44|4@1+ (1,0) [0|15] "" GW_CENTRAL,BCM
+ SG_ Crc8 : 48|8@1+ (1,0) [0|255] "" GW_CENTRAL,BCM
+
+BO_ 370 SEAT_DRV_Data2: 8 SEAT_DRV
+ SG_ SeatMotorCurrent_Raw : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" GW_CENTRAL,DOOR_RR,LIGHT_F,DOOR_RL
+ SG_ BackrestAngle : 16|16@1+ (0.1,-1000) [-1000|5553.5] "deg" HVAC,DOOR_RL
+ SG_ SeatPosHeight_Min : 32|16@1+ (0.01,0) [0|655.35] "m" LIGHT_R,DOOR_RL
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" DOOR_RL,HVAC
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" DOOR_RL,HVAC
+
+BO_ 376 SEAT_DRV_Cmd3: 8 SEAT_DRV
+ SG_ SeatMotorCurrent_Max : 0|16@1+ (0.1,-1000) [-1000|5553.5] "A" DOOR_RL,LIGHT_R
+ SG_ LumbarPct_Max : 16|8@1+ (0.4,0) [0|102] "%" LIGHT_R
+ SG_ BackrestAngle_Min : 24|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,LIGHT_R
+ SG_ SeatBeltBuckled : 40|1@1+ (1,0) [0|1] "" LIGHT_R,DOOR_FL
+ SG_ AliveCnt : 41|4@1+ (1,0) [0|15] "" LIGHT_R
+ SG_ Crc8 : 45|8@1+ (1,0) [0|255] "" LIGHT_R
+
+BO_ 377 HVAC_Status1: 8 HVAC
+ SG_ CompressorSpeed_Min : 0|16@1+ (0.25,0) [0|16383.8] "rpm" DOOR_FR,DOOR_RR,LIGHT_R
+ SG_ CabinTemp_Min : 16|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,LIGHT_R
+ SG_ RefrigPressure_Avg : 24|16@1+ (0.1,0) [0|6553.5] "kPa" DOOR_FL,DOOR_RL,LIGHT_R
+ SG_ SetTempL_Min : 40|8@1+ (1,-40) [-40|215] "degC" SEAT_DRV,DOOR_FL,LIGHT_R
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" LIGHT_R,DOOR_RL,LIGHT_F
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" LIGHT_R,DOOR_RL,LIGHT_F
+
+BO_ 378 HVAC_Data2: 8 HVAC
+ SG_ AmbientTemp : 0|8@1+ (1,-40) [-40|215] "degC" DOOR_FL,DOOR_FR,DOOR_RL,LIGHT_F
+ SG_ EvapTemp_Min : 8|8@1+ (1,-40) [-40|215] "degC" LIGHT_R,DOOR_FR,LIGHT_F
+ SG_ AirRecirc : 16|1@1+ (1,0) [0|1] "" SEAT_DRV,LIGHT_F
+ SG_ SetTempL_Max : 17|8@1+ (1,-40) [-40|215] "degC" DOOR_RL,GW_CENTRAL,LIGHT_F
+ SG_ SunLoad : 25|8@1+ (0.4,0) [0|102] "%" DOOR_FR,DOOR_FL,LIGHT_F
+ SG_ RefrigPressure : 33|16@1+ (0.1,0) [0|6553.5] "kPa" LIGHT_F
+ SG_ AliveCnt : 49|4@1+ (1,0) [0|15] "" LIGHT_F,DOOR_RL
+ SG_ Crc8 : 53|8@1+ (1,0) [0|255] "" LIGHT_F,DOOR_RL
+
+BO_ 386 HVAC_Cmd3: 8 HVAC
+ SG_ BlowerSpeed : 0|8@1+ (0.4,0) [0|102] "%" LIGHT_F,GW_CENTRAL
+ SG_ CabinTemp_Max : 8|8@1+ (1,-40) [-40|215] "degC" LIGHT_R,DOOR_RR,SEAT_DRV,GW_CENTRAL
+ SG_ RefrigPressure_Max : 16|16@1+ (0.1,0) [0|6553.5] "kPa" LIGHT_F,SEAT_DRV,GW_CENTRAL
+ SG_ CompressorSpeed_Raw : 32|16@1+ (0.25,0) [0|16383.8] "rpm" DOOR_FL,GW_CENTRAL
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" GW_CENTRAL,SEAT_DRV,DOOR_FR
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" GW_CENTRAL,SEAT_DRV,DOOR_FR
+
+BO_ 389 HVAC_Info4: 8 HVAC
+ SG_ CompressorSpeed_Avg : 0|16@1+ (0.25,0) [0|16383.8] "rpm" SEAT_DRV,GW_CENTRAL,LIGHT_F
+ SG_ HeaterPower_Raw : 16|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,SEAT_DRV,LIGHT_R
+ SG_ BlowerSpeed_Min : 24|8@1+ (0.4,0) [0|102] "%" GW_CENTRAL,LIGHT_R
+ SG_ BlowerSpeed_Avg : 32|8@1+ (0.4,0) [0|102] "%" LIGHT_F,DOOR_RL,GW_CENTRAL
+ SG_ EvapTemp_Raw : 40|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" GW_CENTRAL,DOOR_FL,DOOR_RR
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" GW_CENTRAL,DOOR_FL,DOOR_RR
+
+BO_ 393 HVAC_Limits5: 8 HVAC
+ SG_ SetTempL : 0|8@1+ (1,-40) [-40|215] "degC" SEAT_DRV,GW_CENTRAL
+ SG_ SunLoad_Raw : 8|8@1+ (0.4,0) [0|102] "%" LIGHT_F,DOOR_RL,GW_CENTRAL
+ SG_ CompressorSpeed : 16|16@1+ (0.25,0) [0|16383.8] "rpm" SEAT_DRV,GW_CENTRAL
+ SG_ SetTempR_Min : 32|8@1+ (1,-40) [-40|215] "degC" LIGHT_F,DOOR_FR,BCM,GW_CENTRAL
+ SG_ DefrostActive : 40|1@1+ (1,0) [0|1] "" SEAT_DRV,DOOR_RL,DOOR_FL,GW_CENTRAL
+ SG_ CabinTemp_Avg : 41|8@1+ (1,-40) [-40|215] "degC" SEAT_DRV,LIGHT_F,DOOR_FL,GW_CENTRAL
+ SG_ AliveCnt : 49|4@1+ (1,0) [0|15] "" GW_CENTRAL,BCM,DOOR_FR
+ SG_ Crc8 : 53|8@1+ (1,0) [0|255] "" GW_CENTRAL,BCM,DOOR_FR
+
+BO_ 396 LIGHT_F_Status1: 8 LIGHT_F
+ SG_ HeadlampTemp : 0|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,DOOR_FR
+ SG_ AdaptiveAngle_Avg : 8|16@1+ (0.1,-1000) [-1000|5553.5] "deg" SEAT_DRV,DOOR_FR
+ SG_ HeadlampTemp_Avg : 24|8@1+ (1,-40) [-40|215] "degC" SEAT_DRV,DOOR_FR,BCM
+ SG_ MatrixSegment : 32|4@1+ (1,0) [0|15] "" DOOR_RL,DOOR_FR
+ SG_ AdaptiveAngle : 36|16@1+ (0.1,-1000) [-1000|5553.5] "deg" LIGHT_R,GW_CENTRAL,BCM,DOOR_FR
+ SG_ AliveCnt : 52|4@1+ (1,0) [0|15] "" DOOR_FR
+ SG_ Crc8 : 56|8@1+ (1,0) [0|255] "" DOOR_FR
+
+BO_ 398 LIGHT_F_Data2: 8 LIGHT_F
+ SG_ LevelingPos_Avg : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" DOOR_FR,DOOR_RR,SEAT_DRV,GW_CENTRAL
+ SG_ CornerLight : 16|1@1+ (1,0) [0|1] "" HVAC,GW_CENTRAL
+ SG_ AdaptiveAngle_Min : 17|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL
+ SG_ LevelingPos_Max : 33|16@1+ (0.1,-1000) [-1000|5553.5] "deg" DOOR_RL,GW_CENTRAL
+ SG_ AliveCnt : 49|4@1+ (1,0) [0|15] "" GW_CENTRAL,DOOR_FR,DOOR_FL
+ SG_ Crc8 : 53|8@1+ (1,0) [0|255] "" GW_CENTRAL,DOOR_FR,DOOR_FL
+
+BO_ 399 LIGHT_F_Cmd3: 8 LIGHT_F
+ SG_ AdaptiveAngle_Max : 0|16@1+ (0.1,-1000) [-1000|5553.5] "deg" DOOR_FL,BCM
+ SG_ LampFault : 16|1@1+ (1,0) [0|1] "" HVAC,BCM
+ SG_ HeadlampTemp_Min : 17|8@1+ (1,-40) [-40|215] "degC" LIGHT_R,BCM
+ SG_ AdaptiveAngle_Raw : 25|16@1+ (0.1,-1000) [-1000|5553.5] "deg" GW_CENTRAL,LIGHT_R,SEAT_DRV,BCM
+ SG_ HighBeam : 41|1@1+ (1,0) [0|1] "" HVAC,BCM
+ SG_ HeadlampTemp_Max : 42|8@1+ (1,-40) [-40|215] "degC" SEAT_DRV,HVAC,DOOR_RL,BCM
+ SG_ AliveCnt : 50|4@1+ (1,0) [0|15] "" BCM,DOOR_FR
+ SG_ Crc8 : 54|8@1+ (1,0) [0|255] "" BCM,DOOR_FR
+
+BO_ 407 LIGHT_R_Status1: 8 LIGHT_R
+ SG_ TurnRearL : 0|1@1+ (1,0) [0|1] "" BCM,DOOR_FR
+ SG_ TailLampTemp_Max : 1|8@1+ (1,-40) [-40|215] "degC" HVAC,DOOR_FR
+ SG_ PlateLight : 9|1@1+ (1,0) [0|1] "" SEAT_DRV,HVAC,LIGHT_F,DOOR_FR
+ SG_ TailLampTemp_Raw : 10|8@1+ (1,-40) [-40|215] "degC" BCM,LIGHT_F,DOOR_FL,DOOR_FR
+ SG_ TailLight : 18|1@1+ (1,0) [0|1] "" SEAT_DRV,BCM,DOOR_FR
+ SG_ LampFaultRear : 19|1@1+ (1,0) [0|1] "" DOOR_FL,DOOR_FR
+ SG_ TailLampTemp_Avg : 20|8@1+ (1,-40) [-40|215] "degC" BCM,DOOR_FR
+ SG_ ReverseLight : 28|1@1+ (1,0) [0|1] "" DOOR_FR
+ SG_ AliveCnt : 29|4@1+ (1,0) [0|15] "" DOOR_FR
+ SG_ Crc8 : 33|8@1+ (1,0) [0|255] "" DOOR_FR
+
+BO_ 408 LIGHT_R_Data2: 8 LIGHT_R
+ SG_ BrakeLight : 0|1@1+ (1,0) [0|1] "" HVAC,DOOR_FL,DOOR_RL,GW_CENTRAL
+ SG_ TailLampTemp_Min : 1|8@1+ (1,-40) [-40|215] "degC" GW_CENTRAL,DOOR_FL,LIGHT_F
+ SG_ FogRear : 9|1@1+ (1,0) [0|1] "" HVAC,GW_CENTRAL,DOOR_FL
+ SG_ TailLampTemp : 10|8@1+ (1,-40) [-40|215] "degC" LIGHT_F,SEAT_DRV,GW_CENTRAL
+ SG_ TurnRearR : 18|1@1+ (1,0) [0|1] "" DOOR_FL,GW_CENTRAL
+ SG_ AliveCnt : 19|4@1+ (1,0) [0|15] "" GW_CENTRAL,LIGHT_F
+ SG_ Crc8 : 23|8@1+ (1,0) [0|255] "" GW_CENTRAL,LIGHT_F
+
+BO_ 412 LIGHT_R_Cmd3: 8 LIGHT_R
+ SG_ AliveCnt : 0|4@1+ (1,0) [0|15] "" SEAT_DRV,BCM,HVAC
+ SG_ Crc8 : 4|8@1+ (1,0) [0|255] "" SEAT_DRV,BCM,HVAC
+
+BO_ 418 LIGHT_R_Info4: 8 LIGHT_R
+ SG_ AliveCnt : 0|4@1+ (1,0) [0|15] "" GW_CENTRAL,DOOR_FL
+ SG_ Crc8 : 4|8@1+ (1,0) [0|255] "" GW_CENTRAL,DOOR_FL
+
+BO_ 426 GW_CENTRAL_Status1: 8 GW_CENTRAL
+ SG_ NetworkMgmtState : 0|4@1+ (1,0) [0|15] "" LIGHT_F,LIGHT_R,DOOR_FR,BCM
+ SG_ GatewayTemp_Max : 4|8@1+ (1,-40) [-40|215] "degC" DOOR_FR,SEAT_DRV,DOOR_RR,BCM
+ SG_ TimeSync_Raw : 12|16@1+ (0.1,0) [0|6553.5] "s" HVAC,LIGHT_R,BCM
+ SG_ VoltageSupply_Raw : 28|16@1+ (0.01,0) [0|655.35] "V" DOOR_RL,DOOR_RR,BCM
+ SG_ BusLoad_Raw : 44|8@1+ (0.4,0) [0|102] "%" LIGHT_F,BCM
+ SG_ AliveCnt : 52|4@1+ (1,0) [0|15] "" BCM,DOOR_RR,LIGHT_F
+ SG_ Crc8 : 56|8@1+ (1,0) [0|255] "" BCM,DOOR_RR,LIGHT_F
+
+BO_ 432 GW_CENTRAL_Data2: 8 GW_CENTRAL
+ SG_ BusLoad_Min : 0|8@1+ (0.4,0) [0|102] "%" LIGHT_R,DOOR_RR
+ SG_ VoltageSupply_Avg : 8|16@1+ (0.01,0) [0|655.35] "V" BCM,LIGHT_F,DOOR_RR
+ SG_ RoutedFrameCount : 24|8@1+ (1,0) [0|255] "" SEAT_DRV,LIGHT_R,DOOR_FL,DOOR_RR
+ SG_ TimeSync_Avg : 32|16@1+ (0.1,0) [0|6553.5] "s" LIGHT_R,DOOR_RR
+ SG_ AliveCnt : 48|4@1+ (1,0) [0|15] "" DOOR_RR,LIGHT_R
+ SG_ Crc8 : 52|8@1+ (1,0) [0|255] "" DOOR_RR,LIGHT_R
+
+BO_ 437 GW_CENTRAL_Cmd3: 8 GW_CENTRAL
+ SG_ VoltageSupply_Min : 0|16@1+ (0.01,0) [0|655.35] "V" DOOR_RR,BCM,LIGHT_R,DOOR_FL
+ SG_ VoltageSupply : 16|16@1+ (0.01,0) [0|655.35] "V" DOOR_FL
+ SG_ TimeSync_Min : 32|16@1+ (0.1,0) [0|6553.5] "s" LIGHT_F,DOOR_FL
+ SG_ SleepRequest : 48|1@1+ (1,0) [0|1] "" LIGHT_R,SEAT_DRV,DOOR_FL
+ SG_ AliveCnt : 49|4@1+ (1,0) [0|15] "" DOOR_FL,LIGHT_F,DOOR_FR
+ SG_ Crc8 : 53|8@1+ (1,0) [0|255] "" DOOR_FL,LIGHT_F,DOOR_FR
+
+BO_ 438 GW_CENTRAL_Info4: 8 GW_CENTRAL
+ SG_ BusLoad_Avg : 0|8@1+ (0.4,0) [0|102] "%" DOOR_FL,BCM,LIGHT_F,DOOR_FR
+ SG_ TimeSync : 8|16@1+ (0.1,0) [0|6553.5] "s" DOOR_RR,DOOR_RL,DOOR_FL,DOOR_FR
+ SG_ GatewayTemp_Avg : 24|8@1+ (1,-40) [-40|215] "degC" DOOR_RL,DOOR_FR
+ SG_ BusLoad : 32|8@1+ (0.4,0) [0|102] "%" LIGHT_R,DOOR_FR
+ SG_ OTAActive : 40|1@1+ (1,0) [0|1] "" HVAC,DOOR_RR,LIGHT_F,DOOR_FR
+ SG_ AliveCnt : 41|4@1+ (1,0) [0|15] "" DOOR_FR
+ SG_ Crc8 : 45|8@1+ (1,0) [0|255] "" DOOR_FR
+
+BA_ "BusType" "CAN";

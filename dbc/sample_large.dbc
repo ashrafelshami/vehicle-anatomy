@@ -1,0 +1,71 @@
+VERSION ""
+
+BU_: Engine_ECU Transmission_ECU ABS_ECU ESP_ECU Steering_ECU Airbag_ECU BCM Cluster Gateway Infotainment Climate_ECU Door_FL Door_FR Lighting_ECU ADAS_Camera Radar_ECU Battery_BMS Telematics
+
+BO_ 256 EngineData: 8 Engine_ECU
+ SG_ EngineRPM : 0|16@1+ (0.25,0) [0|8000] "rpm" Transmission_ECU,Cluster,Gateway,ESP_ECU
+ SG_ ThrottlePos : 16|8@1+ (0.4,0) [0|100] "%" Transmission_ECU,ESP_ECU
+ SG_ CoolantTemp : 24|8@1+ (1,-40) [-40|215] "C" Cluster,Climate_ECU
+
+BO_ 512 GearStatus: 4 Transmission_ECU
+ SG_ CurrentGear : 0|4@1+ (1,0) [0|8] "" Engine_ECU,Cluster,ADAS_Camera
+ SG_ TorqueRequest : 8|12@1+ (0.5,0) [0|2000] "Nm" Engine_ECU
+
+BO_ 768 WheelSpeeds: 8 ABS_ECU
+ SG_ WheelSpeedFL : 0|16@1+ (0.01,0) [0|300] "km/h" Engine_ECU,ESP_ECU,Radar_ECU,Cluster
+ SG_ WheelSpeedFR : 16|16@1+ (0.01,0) [0|300] "km/h" ESP_ECU,Steering_ECU,Gateway
+ SG_ AbsActive : 32|1@1+ (1,0) [0|1] "" BCM,Cluster
+
+BO_ 784 StabilityCtrl: 8 ESP_ECU
+ SG_ YawRate : 0|16@1+ (0.01,-327) [-327|327] "deg/s" Steering_ECU,ADAS_Camera,Airbag_ECU
+ SG_ EspActive : 16|1@1+ (1,0) [0|1] "" Cluster,BCM
+
+BO_ 800 SteeringAngle: 8 Steering_ECU
+ SG_ SteerAngle : 0|16@1+ (0.1,-780) [-780|780] "deg" ESP_ECU,ADAS_Camera,Lighting_ECU
+ SG_ SteerTorque : 16|12@1+ (0.01,-20) [-20|20] "Nm" ADAS_Camera
+
+BO_ 832 CrashStatus: 4 Airbag_ECU
+ SG_ CrashDetected : 0|1@1+ (1,0) [0|1] "" BCM,Gateway,Telematics,Battery_BMS
+ SG_ BeltWarning : 1|1@1+ (1,0) [0|1] "" Cluster
+
+BO_ 1024 BodyStatus: 4 BCM
+ SG_ DoorLockCmd : 0|2@1+ (1,0) [0|3] "" Door_FL,Door_FR
+ SG_ HeadlightCmd : 2|2@1+ (1,0) [0|3] "" Lighting_ECU
+ SG_ IgnitionState : 4|3@1+ (1,0) [0|7] "" Engine_ECU,Climate_ECU,Infotainment
+
+BO_ 1040 DoorFLStatus: 2 Door_FL
+ SG_ DoorOpenFL : 0|1@1+ (1,0) [0|1] "" BCM,Cluster
+ SG_ WindowPosFL : 8|8@1+ (1,0) [0|100] "%" BCM
+
+BO_ 1041 DoorFRStatus: 2 Door_FR
+ SG_ DoorOpenFR : 0|1@1+ (1,0) [0|1] "" BCM,Cluster
+
+BO_ 1056 LightingStatus: 2 Lighting_ECU
+ SG_ LampFault : 0|1@1+ (1,0) [0|1] "" BCM,Cluster
+
+BO_ 1280 ClimateStatus: 4 Climate_ECU
+ SG_ CabinTemp : 0|8@1+ (0.5,-20) [-20|60] "C" Infotainment,Cluster
+ SG_ AcCompressorOn : 8|1@1+ (1,0) [0|1] "" Engine_ECU
+
+BO_ 1536 CameraObjects: 8 ADAS_Camera
+ SG_ ObjectDistance : 0|16@1+ (0.01,0) [0|250] "m" Radar_ECU,ESP_ECU,Cluster
+ SG_ LaneDeparture : 16|2@1+ (1,0) [0|3] "" Steering_ECU,Cluster
+
+BO_ 1552 RadarTargets: 8 Radar_ECU
+ SG_ TargetRange : 0|16@1+ (0.01,0) [0|250] "m" ADAS_Camera,ESP_ECU
+ SG_ TargetSpeed : 16|16@1+ (0.01,-300) [-300|300] "km/h" ADAS_Camera
+
+BO_ 1792 BatteryState: 8 Battery_BMS
+ SG_ StateOfCharge : 0|8@1+ (0.5,0) [0|100] "%" Cluster,Infotainment,Telematics,Gateway
+ SG_ PackVoltage : 8|16@1+ (0.1,0) [0|500] "V" Engine_ECU
+
+BO_ 1808 TelematicsData: 8 Telematics
+ SG_ GpsSpeed : 0|16@1+ (0.01,0) [0|300] "km/h" Infotainment,Cluster
+ SG_ RemoteCommand : 16|4@1+ (1,0) [0|15] "" BCM,Gateway
+
+BO_ 1824 InfotainmentCmd: 4 Infotainment
+ SG_ VolumeLevel : 0|7@1+ (1,0) [0|100] "" Cluster
+ SG_ NavDestination : 8|16@1+ (1,0) [0|65535] "" Telematics
+
+BO_ 2048 GatewayDiag: 8 Gateway
+ SG_ BusLoad : 0|8@1+ (1,0) [0|100] "%" Cluster,Telematics
